@@ -6,7 +6,15 @@ var mon = "Власть деняк: ";
 
 let names = prompt("Имя?");
 let data = parseInt(prompt("Год рождения?"));
-var family = prompt("Фамилия?");
+
+if (!isNaN(data)) {
+} else {
+  do {
+    data = prompt("Это по твоему число ?");
+  } while (isNaN(data));
+}
+
+let family = prompt("Фамилия?");
 let money = confirm("Ты любишь деньги?");
 
 var backTime = "1973";
