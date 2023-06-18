@@ -1,25 +1,30 @@
 "use strict";
 var nameTag = "Имя: ";
-var year = "Вам: ";
+var year = "Год: ";
 var fam = "Фамилия: ";
 var mon = "Власть деняк: ";
 
-var names = prompt("Имя?");
-var data = parseInt(prompt("Год рождения?"));
+let names = prompt("Имя?");
+let data = parseInt(prompt("Год рождения?"));
 var family = prompt("Фамилия?");
-var money = prompt("Ты любишь деньги?");
+let money = confirm("Ты любишь деньги?");
 
 var backTime = "1973";
 var newTime = "2023";
 
-if (data == backTime) {
-  var result = parseInt(newTime - backTime);
+if (money == true) {
+  alert("Welcome to party");
+} else {
+  alert("Good Bay");
 }
-console.log(year + result);
 
+if (data == backTime) {
+  let result = parseInt(newTime - backTime);
+  let year = "Возраст:";
+  console.log(year + result);
+}
 console.log(nameTag + names);
 console.log(year + data);
 console.log(fam + family);
-console.log(mon + money);
 
-confirm(names + family);
+confirm(names + ":" + family);
