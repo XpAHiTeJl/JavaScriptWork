@@ -7,10 +7,6 @@ var invalidData = {
   userAge: true,
 };
 
-var userEmail = prompt("Каков твой Эмэил ?");
-var userPassword = prompt("Какой у тебя пароль?");
-var userAge = prompt("Сколько тебе лет ?");
-
 while (invalidData.userName) {
   var userName = prompt("Как тебя зовут ?");
 
@@ -21,9 +17,43 @@ if (invalidData.userName === false) {
   console.log("Имя корректное!");
 
   while (invalidData.userEmail) {
+    var userEmail = prompt("Каков твой Эмэил ?");
+
     for (var i = 0; i < userEmail.length; i++) {
       var char = userEmail[i];
-      if (char === "@") invalidData.userEmail = false;
+
+      if (char === "@") {
+        console.log("Почта корректна!");
+        invalidData.userEmail = false;
+        break;
+      }
     }
   }
 }
+if (invalidData.userEmail === false) {
+  while (invalidData.userPassword) {
+    var userPassword = prompt("Какой у тебя пароль?");
+
+    var NumberInPassword = false;
+    var StrInPassword = false;
+
+    for (var i = 0; i < userPassword.length; i++) {
+      var char = parseInt(userPassword[i]);
+
+      if (!isFinite(char)) {
+        console.log("Первое");
+        NumberInPassword = true;
+      } else {
+        console.log("Второе");
+        StrInPassword = true;
+      }
+    }
+
+    if (userPassword.length > 7 && NumberInPassword && StrInPassword) {
+      console.log("Here");
+      invalidData.userPassword = false;
+      break;
+    }
+  }
+}
+var userAge = prompt("Сколько тебе лет ?");
