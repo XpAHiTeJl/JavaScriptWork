@@ -49,7 +49,7 @@ if (invalidData.userEmail === false) {
     }
 
     if (userPassword.length > 7 && NumberInPassword && StrInPassword) {
-      console.log("Пароль подходит");
+      console.log("Here");
       invalidData.userPassword = false;
       break;
     }
@@ -58,16 +58,7 @@ if (invalidData.userEmail === false) {
 
 while (invalidData.userAge){
   var userAge = prompt("Сколько тебе лет ?");
+
   if (userAge >= 18) invalidData.userAge = false
- 
-if (invalidData.userAge === false) {
   console.log("Добро пожаловать!")
-  break;
-
 }
-else (userAge < 18);
-  console.log('Ты еще мал для такого контента!')
-  break;
-
-}
-
