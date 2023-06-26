@@ -1,24 +1,32 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+"use strict";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector('#counter'))
+
+const  persona = {
+   age:"25",
+   name:"Dima",
+   isAdmin: true,
+}
+
+
+persona.age = parseInt(prompt("Каков твой возраст?" ));
+persona.name = prompt("Каков твой имя?" );
+persona.isAdmin = confirm("Ты главный?" );
+
+const prop = prompt("Введите новый ключь ");
+
+persona[prop] = prompt("Введите значение для нового ключа");
+
+const personaNewKey = persona[prop];
+
+const newKeyValue = parseInt(personaNewKey);
+
+const isFiniteNewKey = isFinite(newKeyValue);
+
+if(isFiniteNewKey){
+
+  persona[prop] = newKeyValue;
+  
+  console.log(persona);
+}
+
