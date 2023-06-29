@@ -9,7 +9,7 @@ let invalidPerson = {
 
 while (invalidPerson) {
   let userWeight =  prompt("Укажите ваш Вес:");
-  let userHeight =  prompt("Укажите ваш Рост:" );
+  let userHeight =  prompt("Укажите ваш Рост:(0.00)" );
 
   console.log("Вес:", userWeight);
   console.log("Рост:", userHeight);
