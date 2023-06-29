@@ -50,9 +50,7 @@ for (let i = 0; i < rowSharp; i++) {
 
     if ( i % 2 === 0) {
       str += space ;
-} else{
-      // str += symbol;
-  }
+}
 
     for( let j = 0 ; j < rowLength ; j++){
 
