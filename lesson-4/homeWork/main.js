@@ -56,7 +56,8 @@ for (let i = 0; i < rowSharp; i++) {
 
     if ( j % 2 === 0) {
           str += space ;
-    } else{
+    } 
+    else{
           str += symbol;
       }
     }
