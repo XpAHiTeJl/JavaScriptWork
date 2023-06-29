@@ -1,24 +1,77 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+"use strict";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector('#counter'))
+let invalidPerson = {
+  userWeight: true,
+  userHeight: true,
+};
+
+
+while (invalidPerson) {
+  let userWeight =  prompt("Укажите ваш Вес:");
+  let userHeight =  prompt("Укажите ваш Рост:" );
+
+  console.log("Вес:", userWeight);
+  console.log("Рост:", userHeight);
+
+if( invalidPerson = true){
+
+let userFormulHight = parseInt (userHeight ** 2 );
+console.log("Рост*Рост:",userFormulHight); 
+
+let userFormul = +(userWeight / userFormulHight )
+  console.log("Среднее:", userFormul);
+
+let  unExist = userFormul < 16;
+let  young = userFormul > 16 && userFormul < 18;
+let  adult = userFormul >= 18 && userFormul < 25;
+let  elderly = userFormul >= 25 && userFormul < 30;
+let  almostDeadman = userFormul >= 30;
+
+if (young) {
+    console.log('Маловато будет');
+} else if (adult) {
+    console.log('ЭТО НОРМА');
+} else if (elderly) {
+    console.log('Чутка избыток');
+} else if (unExist || almostDeadman) {
+    console.log('Кто ты вообще?');
+}
+break;
+}
+}
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// if (userMMR < 700) {
+//     console.log("Take ur bagpack and put there ur hucking books");
+//     // && , || , !
+// }else if (userMMR > 700 && userMMR < 2000) {
+//     console.log("There is some one whose mom was on the meeting with ur party-partners (was hucked)");
+// }else if (userMMR > 2000 && userMMR < 4000) {
+//     console.log("U should try to run faster on the streets");
+// }else {
+//     console.log("Oh my goodness !");
+// }
