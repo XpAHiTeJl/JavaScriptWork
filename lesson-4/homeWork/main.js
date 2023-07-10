@@ -1,11 +1,5 @@
 "use strict";
-
-
-
 //  дз номер 1 сделать пирамиду
-
-
-
 
 // const lvl = "#";
 
@@ -23,14 +17,6 @@
 //   lvlDungeon += lvl.repeat(i) + newLvlDungeon;
 // }
 // console.log(lvlDungeon)
-
-
-
-
-
-
-
-
 
 
 //  ДЗ номер 2 сделать мини елочку с пробелами
