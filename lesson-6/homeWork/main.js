@@ -9,14 +9,13 @@
        const Password = getCardDetials(`Введи пароль`);
          console.log("Пароль:", Password);
    
-      // debugger;
+      debugger;
 
          const isValidEmail = validateEmail(userEmail);
          const isValidPassword = validatePassword(Password)
 
-         if(isValidEmail || isValidPassword)
-         
-       return  ;
+         if(isValidEmail || isValidPassword) return ;
+         else()
         alert("Поздравляю все в порядке!");
        
    } 
@@ -26,7 +25,7 @@
          let isNumValue = false;
 
       for(let i = 0 ; i < Password.length ; i++){
-         
+
          const value = +Password[i];
 
       if(isNaN(value)){ 
