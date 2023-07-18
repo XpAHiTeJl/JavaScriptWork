@@ -9,13 +9,12 @@
        const Password = getCardDetials(`Введи пароль`);
          console.log("Пароль:", Password);
    
-      debugger;
+      // debugger;
 
          const isValidEmail = validateEmail(userEmail);
          const isValidPassword = validatePassword(Password)
 
          if(isValidEmail || isValidPassword) return ;
-         else()
         alert("Поздравляю все в порядке!");
        
    } 
