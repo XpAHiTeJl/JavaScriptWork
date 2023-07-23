@@ -1,4 +1,5 @@
 "use strict";
+console.log("----------------------------------------");
 
 const students = [
   "John",
@@ -37,6 +38,7 @@ function upgradeStudents(arr) {
   return nestedArr
 }
 // Выризаем людей
+console.log("----------------------------------------");
 
 const searchText = "HelloDimaWorldMishaNeRuslanDota?";
 console.log('[searchText]',searchText);
@@ -62,3 +64,22 @@ console.log('[mergStr]',mergStr);
 const Dima = searchText.slice(startIndex, lastIndex );
 
 console.log('[knifeDima]',Dima);
+console.log("----------------------------------------");
+// Валидность полезности ! 
+
+hiMan('Kirill');
+hiMan('Dota2');
+hiMan('Студент');
+
+function hiMan(name) {
+    console.log("Привет," + name);
+}
+
+console.log("----------------------------------------");
+
+const math = function ( x , y){
+  return x - y
+};
+const result = math (250 ,175);
+console.log("математика" , result);
+console.log("----------------------------------------");
