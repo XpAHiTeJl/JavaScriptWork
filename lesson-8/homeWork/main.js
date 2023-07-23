@@ -36,25 +36,27 @@ function upgradeStudents(arr) {
     
   return nestedArr
 }
+// Выризаем людей
 
 const searchText = "HelloDimaWorldMishaNeRuslanDota?";
-const dimaStr = 'Dima'
-
 console.log('[searchText]',searchText);
+
+
+const dimaStr = 'Dima'
 
 const startIndex = searchText.indexOf(dimaStr);
 const lastIndex = startIndex + dimaStr.length;
 
-
-const startName = searchText.slice(0, startIndex )
-const lastName = searchText.slice(lastIndex )
-
-const mergStr = startName + lastName;
-console.log('[mergStr]',mergStr);
-
-
 console.log('[startIndex]',startIndex);
 console.log('[lastIndex]',lastIndex);
+
+// Отдельный текст с выризанным Дима
+
+const startName = searchText.slice(0, startIndex );
+const lastName = searchText.slice(lastIndex );
+const mergStr = startName + lastName;
+
+console.log('[mergStr]',mergStr);
 
 
 const Dima = searchText.slice(startIndex, lastIndex );
