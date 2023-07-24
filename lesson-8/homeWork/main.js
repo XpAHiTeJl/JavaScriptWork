@@ -62,7 +62,6 @@ console.log('[mergStr]',mergStr);
 
 
 const Dima = searchText.slice(startIndex, lastIndex );
-
 console.log('[knifeDima]',Dima);
 console.log("----------------------------------------");
 // Валидность полезности ! 
