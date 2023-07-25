@@ -1,6 +1,7 @@
 // СОбрание lesson 11 с немо
 // + lesson 13
 
+console.log("----------------------------------------");
 
 const searchNemo = "asdsadwqeqwnemodadwqetgsdhqe";
 console.log("Search nemo this text: ",searchNemo);
