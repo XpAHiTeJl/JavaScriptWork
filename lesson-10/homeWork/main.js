@@ -8,8 +8,6 @@ function calc() {
   const num2 = getNumber2();
   console.log("Второе число :",num2);
 
-
-
   let isRunning = true ;
   while (isRunning) {
   const symbol = prompt("Какие символы ты хочешь ввести? ( + ) ( - ) ( / ) ( * ) ");
@@ -18,7 +16,6 @@ function calc() {
     case "+":
       isRunning = false ;
       console.log("Твой Символ : ",symbol);
-
       console.log("Ответ: ",num1 + num2 );
         alert(num1 + num2);
 
@@ -30,7 +27,6 @@ function calc() {
       console.log("Ответ: ",num1 - num2 );
         alert(num1 - num2);
       
-
       break;
   
     case "/":
@@ -39,7 +35,6 @@ function calc() {
       console.log("Ответ: ",num1 / num2 );
         alert(num1 / num2);
       
-
       break;
   
     case "*":
@@ -48,19 +43,13 @@ function calc() {
       console.log("Ответ: ",num1 * num2 );
         alert(num1 * num2);
       
-
       break;
   
     default:
       break;
-  }
-
-
-  
-
+    }
   }
   
-
 
 
   function isInvalid(num) {
