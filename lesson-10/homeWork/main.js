@@ -9,18 +9,24 @@ function calc() {
   console.log("Второе число :",num2);
 
 
-  const number = prompt("Какие символы ты хочешь ввести? ( + ) ( - ) ( / ) ( * ) ");
-  console.log("Твой Символ : ",number);
 
+  let isRunning = true ;
+  while (isRunning) {
+  const symbol = prompt("Какие символы ты хочешь ввести? ( + ) ( - ) ( / ) ( * ) ");
 
-  switch (number) {
+  switch (symbol) {
     case "+":
+      isRunning = false ;
+      console.log("Твой Символ : ",symbol);
+
       console.log("Ответ: ",num1 + num2 );
         alert(num1 + num2);
 
       break;
   
     case "-":
+      isRunning = false ;
+      console.log("Твой Символ : ",symbol);
       console.log("Ответ: ",num1 - num2 );
         alert(num1 - num2);
       
@@ -28,6 +34,8 @@ function calc() {
       break;
   
     case "/":
+      isRunning = false ;
+       console.log("Твой Символ : ",symbol);
       console.log("Ответ: ",num1 / num2 );
         alert(num1 / num2);
       
@@ -35,6 +43,8 @@ function calc() {
       break;
   
     case "*":
+      isRunning = false ;
+       console.log("Твой Символ : ",symbol);
       console.log("Ответ: ",num1 * num2 );
         alert(num1 * num2);
       
@@ -42,11 +52,16 @@ function calc() {
       break;
   
     default:
-      alert("Введи корректное ЧИСЛО! ")
       break;
+  }
+
+
+  
 
   }
   
+
+
 
   function isInvalid(num) {
     return isNaN(num)
@@ -81,3 +96,6 @@ function calc() {
 }
 calc();
 console.log("----------------------------------------");
+
+
+
