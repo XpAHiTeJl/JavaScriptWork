@@ -3,7 +3,7 @@
 const store = [
   {
   category : "drama",
-  movie : [ 
+       movie : [ 
       {
         label : "Barbie",
         yearOfRelease : new Date().getFullYear().toString(),
@@ -17,7 +17,7 @@ const store = [
         ]
       },
 
-      {
+  {
       category : "comedy",
       movie : [ 
       {
@@ -31,7 +31,7 @@ const store = [
         tags : ["#dnepr" , "#office"]
           }
         ]
-      }
+      },
 ];
 
   let isRunning = true;
@@ -102,5 +102,4 @@ const store = [
 
  const result = getCategories(store); 
  console.log('[result]',result);
-
-        console.log('[store]', store);
+ console.log('[store]', store);
