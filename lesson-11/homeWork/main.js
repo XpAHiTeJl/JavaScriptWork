@@ -42,9 +42,21 @@ const store = [
     const movie = prompt(" Привет, ты должен выбрать категорию: " + getCategories(store));
     console.log('[категория]', movie);
 
-    matchCategories(movie,store);
-  
-    isRunning = isExit();
+    for (const  element of store) {
+         
+      if (movie !== element['category'] ) {
+      }
+      else{
+          matchCategories(movie,store);
+         isRunning = isExit();
+
+          break;
+      }
+    
+    }
+    
+
+
     
   } 
  
