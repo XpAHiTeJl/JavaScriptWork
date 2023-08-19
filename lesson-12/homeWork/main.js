@@ -12,6 +12,7 @@ const extreactData = (people, prop) => {
       const value = perosn[prop];
       sum += value;
     }
+
     return sum;
   }
 };
@@ -45,6 +46,16 @@ const IT_STEP = {
     {
       name: "Mick",
       surname: "Tompson",
+      outcome: OUTCOME_BY_DEFAULT,
+    },
+    {
+      name: "Jack",
+      surname: "Frig",
+      outcome: OUTCOME_BY_DEFAULT,
+    },
+    {
+      name: "Adam",
+      surname: "Mops",
       outcome: OUTCOME_BY_DEFAULT,
     },
   ],
