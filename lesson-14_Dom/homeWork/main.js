@@ -90,6 +90,8 @@ forms.addEventListener("submit", function (e) {
     }
   }
   if (FirstNameValue.length > 4 && LastNameValue.length > 5) {
+    console.log("[Name]", FirstNameValue);
+    console.log("[Familiya]", LastNameValue);
     alert("Ты молодец!");
   }
 });
