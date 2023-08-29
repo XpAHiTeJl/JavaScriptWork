@@ -72,7 +72,7 @@ forms.addEventListener("submit", function (e) {
   const LastNameValue = LastName.value.trim();
 
   if (FirstNameValue.length > 4) {
-    FirstName.style.background = "blue";
+    FirstName.style.background = "green";
   } else {
     if (FirstNameValue.length <= 4) {
       FirstName.style.background = "red";
@@ -81,7 +81,7 @@ forms.addEventListener("submit", function (e) {
     }
   }
   if (LastNameValue.length > 5) {
-    LastName.style.background = "blue";
+    LastName.style.background = "green";
   } else {
     if (LastNameValue.length <= 5) {
       LastName.style.background = "red";
