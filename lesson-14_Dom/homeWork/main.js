@@ -71,15 +71,18 @@ forms.addEventListener("submit", function (e) {
   const FirstNameValue = FirstName.value.trim();
   const LastNameValue = LastName.value.trim();
 
-  if (FirstNameValue.length > 4 && LastNameValue.length > 5) {
+  if (FirstNameValue.length > 4) {
     FirstName.style.background = "blue";
-    LastName.style.background = "blue";
   } else {
     if (FirstNameValue.length <= 4) {
       FirstName.style.background = "red";
       console.log("[failed]", "В имени должно быть больше 4");
       FirstName.focus();
     }
+  }
+  if (LastNameValue.length > 5) {
+    LastName.style.background = "blue";
+  } else {
     if (LastNameValue.length <= 5) {
       LastName.style.background = "red";
       console.log("[failed]", "В фамилии должно быть больше 5");
