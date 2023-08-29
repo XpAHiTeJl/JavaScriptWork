@@ -1,10 +1,5 @@
 "use strict";
 
-const persone = {
-  name: "Kiborg Vbivca",
-};
-console.log("Hello , " + persone.name);
-
 console.log("----------------------------------------------------------------");
 console.log("Element ID , Element TagName , ElementClassName , Selector!");
 console.log("----------------------------------------------------------------");
@@ -48,15 +43,47 @@ console.log("----------------------------------------------------------------");
 
 for (let i = 0; i < children.length; i++) {
   const element = children[i];
-  console.log("[element.style]", element.style);
+  // console.log("[element.style]", element.style);
 
   console.log("[element.coordinates]", element.getBoundingClientRect());
 
   if (element.id === "certain-input") {
-    setTimeout(() => {
-      element.style.background = "green";
-      console.log("[Текст который был введен в First Name: ]", element.value);
-    }, 4000);
+    // setTimeout(() => {
+    //   element.style.background = "green";
+    //   console.log("[Текст который был введен в First Name: ]", element.value);
+    // }, 4000);
   }
 }
 console.log("----------------------------------------------------------------");
+// Цвет серый
+const side = document.getElementById("side");
+side.style.background = "gray";
+console.log("[side]", side);
+// --------------------------------------
+
+const forms = document.getElementById("form");
+const FirstName = document.getElementById("certain-input");
+const LastName = document.getElementById("kek");
+
+forms.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const FirstNameValue = FirstName.value.trim();
+  const LastNameValue = LastName.value.trim();
+
+  if (FirstNameValue.length > 4 && LastNameValue.length > 5) {
+    FirstName.style.background = "blue";
+    LastName.style.background = "blue";
+  } else {
+    if (FirstNameValue.length <= 4) {
+      FirstName.style.background = "red";
+      console.log("[failed]", "В имени должно быть больше 4");
+      FirstName.focus();
+    }
+    if (LastNameValue.length <= 5) {
+      LastName.style.background = "red";
+      console.log("[failed]", "В фамилии должно быть больше 5");
+      LastName.focus();
+    }
+  }
+});
