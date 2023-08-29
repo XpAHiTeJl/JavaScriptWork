@@ -89,4 +89,7 @@ forms.addEventListener("submit", function (e) {
       LastName.focus();
     }
   }
+  if (FirstNameValue.length > 4 && LastNameValue.length > 5) {
+    alert("Ты молодец!");
+  }
 });
