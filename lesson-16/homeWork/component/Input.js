@@ -10,7 +10,6 @@ export class Input extends Component {
     this.events = {
       keydown: this.getInputValue,
     };
-
     for (const event in option.events) {
       const eventFunction = option.events[event];
 
@@ -20,11 +19,12 @@ export class Input extends Component {
 
   getInputValue(e) {
     const inputsLength = e.target.value.length;
+    console.log(e.target.value);
 
     if (inputsLength < 4) {
-      e.target.style.background = "darkmagenta";
+      e.target.style.background = "red";
     } else {
-      e.target.style.background = "inherit";
+      e.target.style.background = "green";
     }
   }
 }
