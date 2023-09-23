@@ -1,24 +1,37 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// library
+// own components
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+import { tasks } from "./model/tasks";
+import { Task } from "./components/Task";
 
-setupCounter(document.querySelector('#counter'))
+// functions
+import { tasksToHTML } from "./utils/toHTML";
+
+// styles
+import "./style.css";
+
+const taskManager = document.getElementById("task-manager");
+const doneHTML = document.getElementById("done");
+
+const title = document.querySelector("#task-title");
+const description = document.querySelector("#task-description");
+
+const send = document.querySelector("#btn");
+
+send.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const task = new Task({
+    title: title.value,
+    description: description.value,
+  });
+
+  tasks.push(task);
+
+  tasksToHTML(tasks, taskManager, doneHTML);
+
+  title.value = "";
+  description.value = "";
+});
+
+tasksToHTML(tasks, taskManager, doneHTML);
