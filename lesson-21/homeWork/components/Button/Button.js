@@ -22,8 +22,7 @@ export class Button extends Component {
       ...attrs,
     });
 
-    this.button = document.createElement("input");
-    this.button.className = "button" + className;
+    this.button = document.createElement(tagName ? tagName : "button");
     this.button.textContent = textContent ? textContent : "";
 
     return this.button;

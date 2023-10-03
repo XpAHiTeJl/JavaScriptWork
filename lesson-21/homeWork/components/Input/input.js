@@ -22,9 +22,8 @@ export class Input extends Component {
       ...attrs,
     });
 
-    this.input = document.createElement(tagName);
-    this.input.className = "input" + className;
-    this.input.textContent = textContent ? textContent : "";
+    this.input = document.createElement("input");
+    this.input.className = "input";
 
     return this.input;
   }
