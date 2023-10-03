@@ -1,5 +1,6 @@
 import { isArray } from "../utils/isArray";
 import { append, appendMany } from "../utils/append";
+import { defineEvent } from "../utils/defineEvent ";
 
 export class Component {
   constructor({
@@ -12,6 +13,7 @@ export class Component {
     ...attrs
   }) {
     if (!tagName) return;
+
     this.tagName = tagName;
     this.className = className;
     if (textContent) this.textContent = textContent;

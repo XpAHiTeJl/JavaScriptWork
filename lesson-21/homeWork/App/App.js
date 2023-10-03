@@ -7,7 +7,7 @@ export class App extends Component {
     textContent,
     html,
     children,
-    events,
+    event,
     ...attrs
   }) {
     super({
@@ -16,7 +16,7 @@ export class App extends Component {
       textContent,
       html,
       children,
-      events,
+      event,
       ...attrs,
     });
   }

@@ -2,7 +2,6 @@ import { App as Application } from "./App/app";
 import { Button, Input, Avatar } from "./components/index";
 
 import { append, prepend } from "./utils/append";
-import { render } from "./core/render";
 
 import "./style.scss";
 
@@ -29,7 +28,7 @@ const inputs = [
         keydown: (e) => {
           const value = e.target.value;
 
-          console.log("[value]", value);
+          console.log(value);
         },
       },
     ],
@@ -41,7 +40,7 @@ const inputs = [
         keydown: (e) => {
           const value = e.target.value;
 
-          console.log("[value]", value);
+          console.log(value);
         },
       },
     ],
