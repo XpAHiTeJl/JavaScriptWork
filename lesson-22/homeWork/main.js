@@ -4,10 +4,22 @@ import { render } from "./core/render";
 
 const app = document.querySelector("#app");
 
-app.addEventListener("click", (e) => {
-  const currentElement = e.target;
-  console.log(currentElement);
-});
+// app.addEventListener("click", (e) => {
+//   const currentElement = e.target;
+//   console.log(currentElement);
+// });
+function counter(num) {
+  num += 1;
+  return num;
+}
+
+function childrenPlus(title) {
+  title.addEventListener("click", (e) => {
+    let cifra = title.children[0].textContent;
+    const chil = parseInt(cifra);
+    title.children[0].textContent = counter(chil);
+  });
+}
 
 const history = [];
 
@@ -22,21 +34,42 @@ const videotitle = new Component({
   tagName: "div",
   id: "video",
   textContent: "Videos",
+  children: [
+    new Component({
+      tagName: "div",
+      textContent: "0",
+    }).toHtml(),
+  ],
 }).toHtml();
+childrenPlus(videotitle);
 render(videotitle, MightBlock);
 
 const musictitle = new Component({
   tagName: "div",
   id: "music",
   textContent: "Musics",
+  children: [
+    new Component({
+      tagName: "div",
+      textContent: "0",
+    }).toHtml(),
+  ],
 }).toHtml();
+childrenPlus(musictitle);
 render(musictitle, MightBlock);
 
 const abouttitle = new Component({
   tagName: "div",
   id: "about",
   textContent: "About US",
+  children: [
+    new Component({
+      tagName: "div",
+      textContent: "0",
+    }).toHtml(),
+  ],
 }).toHtml();
+childrenPlus(abouttitle);
 render(abouttitle, MightBlock);
 
 const titleHistory = new Component({
