@@ -4,10 +4,6 @@ import { render } from "./core/render";
 
 const app = document.querySelector("#app");
 
-// app.addEventListener("click", (e) => {
-//   const currentElement = e.target;
-//   console.log(currentElement);
-// });
 function counter(num) {
   num += 1;
   return num;
