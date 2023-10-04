@@ -13,7 +13,6 @@ export class Component {
     ...attrs
   }) {
     if (!tagName) return;
-
     this.tagName = tagName;
     this.className = className;
     if (textContent) this.textContent = textContent;
