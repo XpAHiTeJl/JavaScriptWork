@@ -3,6 +3,7 @@ import { Component } from "./core/component";
 import { render } from "./core/render";
 
 const app = document.querySelector("#app");
+
 app.addEventListener("click", (e) => {
   const currentElement = e.target;
   console.log(currentElement);
@@ -15,7 +16,6 @@ const MightBlock = new Component({
   className: "MightBlock",
   id: "Block",
 }).toHtml();
-
 render(MightBlock, app);
 
 const videotitle = new Component({
@@ -23,7 +23,6 @@ const videotitle = new Component({
   id: "video",
   textContent: "Videos",
 }).toHtml();
-
 render(videotitle, MightBlock);
 
 const musictitle = new Component({
@@ -67,8 +66,8 @@ for (const child of MightBlock.children) {
         ":" +
         currentDate.getSeconds() +
         ")" +
-        " Next";
-      const childsInfoAboutClick = [child.textContent, ", at", fullDate].join(
+        " ||";
+      const childsInfoAboutClick = [child.textContent, "Data:", fullDate].join(
         " "
       );
       history.push(childsInfoAboutClick);

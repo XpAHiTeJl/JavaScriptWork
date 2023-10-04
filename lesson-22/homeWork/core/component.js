@@ -10,7 +10,6 @@ export class Component {
 
   toHtml() {
     this.element = document.createElement(this.tagName);
-    if (this.className) this.element.className = this.className;
     if (this.id) this.element.id = this.id;
     if (this.textContent) this.element.textContent = this.textContent;
     if (this.children) {
