@@ -10,7 +10,7 @@ export const PERSON_BY_DEFAULT = [
     salary: 1500,
     age: 36,
     gender: genders.male,
-    avatar: "./public/images/rich_man.jpeg",
+    avatar: "./public/images/john.jpg",
   }),
   new Human({
     firstName: "Mike",
@@ -19,7 +19,7 @@ export const PERSON_BY_DEFAULT = [
     salary: 800,
     age: 17,
     gender: genders.male,
-    avatar: "./public/images/rich_man.jpeg",
+    avatar: "./public/images/mike.jpg",
   }),
   new Human({
     firstName: "Bob",
@@ -28,7 +28,7 @@ export const PERSON_BY_DEFAULT = [
     salary: 2300,
     age: 22,
     gender: genders.male,
-    avatar: "./public/images/avarage_man.webp",
+    avatar: "./public/images/bob.jpg",
   }),
   new Human({
     firstName: "Jim",
@@ -37,6 +37,6 @@ export const PERSON_BY_DEFAULT = [
     salary: 1700,
     age: 32,
     gender: genders.male,
-    avatar: "./public/images/poor_man.webp",
+    avatar: "./public/images/jim.jpg",
   }),
 ];
