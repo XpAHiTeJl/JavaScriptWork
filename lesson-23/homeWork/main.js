@@ -1,64 +1,58 @@
-import "./style.css";
 import {
-  Human,
-  Driver,
-  Doctor,
-  Developer,
-  Admin,
-  Clerk,
-  Uneployed,
-} from "./classes";
-import { genders } from "./interfaces/gender";
-import { salaries } from "./interfaces/salaries";
+  Component,
+  toHTML,
+  appendElement,
+  appendElements,
+  render,
+} from "./core";
 
-const john = new Human({
-  name: "John",
-  balance: 0,
-  gender: genders.male,
-});
+import { Megapolice, BaseCity, Human } from "./classes";
 
-const mike = new Driver({
-  name: "Mike",
-  balance: 0,
-  gender: genders.male,
-});
+import { App as Application, Header, Footer, Main } from "./component";
 
-const alice = new Doctor({
-  name: "Alice",
-  balance: 0,
-  gender: genders.famale,
-});
+import { getElementByClassName, getRandomNumber } from "./utils";
 
-const verden = new Developer({
-  name: "Verden",
-  balance: 0,
-  gender: genders.male,
-});
+import { PERSON_BY_DEFAULT } from "./default";
 
-const margo = new Admin({
-  name: "Margo",
-  balance: 0,
-  gender: genders.famale,
-});
+import "./style.css";
 
-const ivan = new Clerk({
-  name: "Ivan",
-  balance: 0,
-  gender: genders.male,
-});
+const root = document.querySelector("#app");
 
-const bob = new Uneployed({
-  name: "Bob",
-  balance: 0,
-  gender: genders.male,
-});
+const app = new Application({});
 
-console.log(john);
-console.log(mike);
-console.log(alice);
-console.log(verden);
-console.log(margo);
-console.log(bob);
-console.log(ivan);
+app.addChildren([new Header({}), new Main({}), new Footer({})]);
 
-console.log(john.getName());
+const App = app.toHTML();
+
+const [header, main, footer] = App.children;
+const randomPersonIndex = getRandomNumber(PERSON_BY_DEFAULT.length);
+
+const player = PERSON_BY_DEFAULT[randomPersonIndex];
+
+appendElement(
+  main,
+  new Component({
+    tagName: "div",
+    className: "person",
+    html: `
+    <h2 class='person-data'>Name : ${player.getName()}</h2>
+    <h3 class='person-data'>Age : ${player.getAge()}</h3>
+    <h3 class='person-data'>Salary : ${player.getSalary()}</h3>
+    <h3 class='person-data'>Balance : ${player.getBalance()}</h3>
+   
+    <h3 class='person-data'>Relations : ${
+      player.getRel() ? player.getRel() : "Single"
+    }</h3>
+
+    <div class="person-img-wrapper">
+        <img class='person-img' src="${player.getAvatar()}"/> 
+    </div>
+    `,
+  }).toHTML()
+);
+
+appendElement(root, App);
+
+//  <h3 class="person-data">
+//    Balance : ${player.getJob() ? player.getJob() : "There is nothing here yet"}
+//  </h3>;

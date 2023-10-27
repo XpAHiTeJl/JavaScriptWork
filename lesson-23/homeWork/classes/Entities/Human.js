@@ -1,6 +1,5 @@
 import { AGE_BY_DEFAULT, REL_BY_DEFAULT } from "../../constants";
-import { salaries } from "../../interfaces/salaries";
-import { gender } from "../../interfaces/gender";
+import { salaries } from "../../interfaces";
 
 export class Human {
   #firstName;
