@@ -1,8 +1,3 @@
-export const genders = {
-  male: "m",
-  famale: "f",
-};
-
 export const salaries = [
   { job: "doctor", salary: 300 },
   { job: "developer", salary: 350 },

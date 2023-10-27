@@ -8,7 +8,8 @@ import {
   Clerk,
   Uneployed,
 } from "./classes";
-import { genders } from "./interfaces";
+import { genders } from "./interfaces/gender";
+import { salaries } from "./interfaces/salaries";
 
 const john = new Human({
   name: "John",

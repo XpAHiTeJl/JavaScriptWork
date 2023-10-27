@@ -1,28 +1,71 @@
 import { AGE_BY_DEFAULT, REL_BY_DEFAULT } from "../../constants";
-import { salaries } from "../../interfaces";
+import { salaries } from "../../interfaces/salaries";
+import { gender } from "../../interfaces/gender";
 
 export class Human {
-  #name;
-  #surname;
+  #firstName;
   #age;
   #salary;
-  #gender;
-  #balance;
-  #rel;
   #job;
-  constructor({ name, surname, salary, gender, balance, job }) {
-    this.#name = name;
-    this.#surname = surname;
+  #balance;
+  #gender;
+  #rel;
+  #avatar;
+  #inventory;
+  constructor({ firstName, salary, job, balance, gender, avatar }) {
+    this.#firstName = firstName;
     this.#age = AGE_BY_DEFAULT;
     this.#salary = salary || 0;
-    this.#gender = gender;
+    this.#job = job || null;
     this.#balance = balance;
+    this.#gender = gender;
     this.#rel = REL_BY_DEFAULT;
-    this.#rel = job;
+    this.#avatar = avatar;
+    this.#inventory = [];
   }
 
-  setSalary(salary) {
-    this.#salary = salary;
+  getInventory() {
+    return this.#inventory;
+  }
+
+  setInventory(inventory) {
+    this.#inventory = inventory;
+  }
+
+  getRel() {
+    return this.#rel;
+  }
+
+  setRel(rel) {
+    this.#rel = rel;
+  }
+
+  getGender() {
+    return this.#gender;
+  }
+
+  setGender(gender) {
+    this.#gender = gender;
+  }
+
+  getBalance(balance) {
+    return this.#balance;
+  }
+
+  setBalance(balance) {
+    this.#balance = balance;
+  }
+
+  getAge() {
+    return this.#age;
+  }
+
+  setAge(age) {
+    this.#age = age;
+  }
+
+  getJob() {
+    return this.#job;
   }
 
   setJob(job) {
@@ -31,9 +74,26 @@ export class Human {
   }
 
   getName() {
-    return this.#name;
+    return this.#firstName;
   }
+
+  setName(firstName) {
+    this.#firstName = firstName;
+  }
+
   getSalary() {
     return this.#salary;
+  }
+
+  setSalary(salary) {
+    this.#salary = salary;
+  }
+
+  getAvatar() {
+    return this.#avatar;
+  }
+
+  setAvatar(avararLink) {
+    this.#avatar = avararLink;
   }
 }
