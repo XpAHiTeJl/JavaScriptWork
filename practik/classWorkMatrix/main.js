@@ -35,19 +35,35 @@
 // }
 
 // solveMatrix(matrix1, matrix2);
-const portal = document.querySelector("Loading");
+// const portal = document.querySelector("Loading");
 
-const getTimeout = (interval) => {
-  for (let i = 0; i < 4; i++) {
-    setTimeout(() => {
-      portal.innerHTML = " Loading" + ".".repeat(i);
-    }, interval);
-  }
-};
-const count = 5;
-const interval = 0;
+// const getTimeout = (interval) => {
+//   for (let i = 0; i < 4; i++) {
+//     setTimeout(() => {
+//       portal.innerHTML = " Loading" + ".".repeat(i);
+//     }, interval);
+//   }
+// };
+// const count = 5;
+// const interval = 0;
 
-for (let i = 0; i < count; i++) {
-  interval = +500;
-  getTimeout(interval);
-}
+// for (let i = 0; i < count; i++) {
+//   interval = +500;
+//   getTimeout(interval);
+// }
+// Create a spinner object
+
+let isAwait = true;
+
+const clsBtn = document.querySelector(".loader");
+const cont = document.querySelector(".content");
+
+new Promise((res, rej) => {
+  setTimeout(() => {
+    isAwait = true;
+    clsBtn.style.display = "none";
+    res(isAwait);
+  }, 3000);
+}).then((val) => {
+  if (val) cont.style.display = "flex";
+});
