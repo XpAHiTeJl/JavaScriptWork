@@ -52,7 +52,3 @@ appendElement(
 );
 
 appendElement(root, App);
-
-//  <h3 class="person-data">
-//    Balance : ${player.getJob() ? player.getJob() : "There is nothing here yet"}
-//  </h3>;
