@@ -3,6 +3,6 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Main } from "./Main";
 import { Button } from "./Button";
-import { Input } from "./input";
+import { Input } from "./Input";
 
-export { App, Header, Footer, Main, Button, Input };
+export { App, Header, Footer, Main, Input, Button };

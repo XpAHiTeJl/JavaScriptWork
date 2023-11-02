@@ -41,6 +41,13 @@ h1 {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  height: 100vh;
+  display: flex;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .logo {
@@ -106,4 +113,8 @@ button:focus-visible {
   height: 300px;
   width: 300px;
   border-radius: 50%;
+}
+.header-link {
+  background-color: darkmagenta;
+  margin: 10px;
 }
