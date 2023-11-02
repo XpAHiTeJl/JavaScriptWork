@@ -1,3 +1,88 @@
+import {
+  Component,
+  toHTML,
+  appendElement,
+  appendElements,
+  render,
+} from "./core";
+
+import { Megapolice, BaseCity, Human } from "./classes";
+import { Form } from "./form/form";
+
+import { App as Application, Header, Footer, Main, Button } from "./component";
+
+import { getElementByClassName, getRandomNumber } from "./utils";
+
+import { PERSON_BY_DEFAULT } from "./default";
+
+import "./style.css";
+
+const root = document.querySelector("#app");
+
+const app = new Application({
+  children: [
+    new Header({
+      children: [
+        new Button({
+          tagName: "a",
+          className: "header-link",
+          textContent: "Register",
+          events: {
+            click: (e) => {
+              render(main, new Form({}));
+            },
+          },
+        }),
+        toHTML(),
+        new Button({
+          tagName: "a",
+          className: "header-link",
+          textContent: "Random pers",
+          events: {
+            click: (e) => {
+              render(main, "");
+              appendElement(main, MainContent);
+            },
+          },
+        }),
+        toHTML(),
+      ],
+    }),
+    new Main({}),
+    new Footer({}),
+  ],
+});
+
+app.addChildren([]);
+
+const App = app.toHTML();
+
+const [header, main, footer] = App.children;
+const randomPersonIndex = getRandomNumber(PERSON_BY_DEFAULT.length);
+
+const player = PERSON_BY_DEFAULT[randomPersonIndex];
+
+const MainContent = new Component({
+  tagName: "div",
+  className: "person",
+  html: `
+    <h2 class='person-data'>Name : ${player.getName()}</h2>
+    <h3 class='person-data'>Age : ${player.getAge()}</h3>
+    <h3 class='person-data'>Salary : ${player.getSalary()}</h3>
+    <h3 class='person-data'>Balance : ${player.getBalance()}</h3>
+
+    <h3 class='person-data'>Relations : ${
+      player.getRel() ? player.getRel() : "Single"
+    }</h3>
+
+    <div class="person-img-wrapper">
+        <img class='person-img' src="${player.getAvatar()}"/>
+    </div>
+    `,
+}).toHTML();
+
+appendElement(root, App);
+
 // import { appendElement, render } from "./core";
 // import { store } from "./store";
 
@@ -81,98 +166,3 @@
 // );
 
 // appendElement(document.body, App);
-
-import {
-  Component,
-  toHTML,
-  appendElement,
-  appendElements,
-  render,
-} from "./core";
-
-import { Megapolice, BaseCity, Human } from "./classes";
-import { Form } from "./form/form";
-
-import { App as Application, Header, Footer, Main, Button } from "./component";
-
-import { getElementByClassName, getRandomNumber } from "./utils";
-
-import { PERSON_BY_DEFAULT } from "./default";
-
-import "./style.css";
-
-const root = document.querySelector("#app");
-
-const app = new Application({
-  children: [
-    new Header({
-      children: [
-        new Button({
-          tagName: "a",
-          className: "header-link",
-          textContent: "Register ",
-          events: {
-            click: (e) => {
-              render(main, new Form({}));
-            },
-          },
-        }),
-        toHTML(),
-        new Button({
-          tagName: "a",
-          className: "header-link",
-          textContent: "Login",
-          events: {
-            click: (e) => {
-              render(
-                main,
-                new Component({
-                  tagName: "div",
-                  html: `<h2>Login</h2>`,
-                }).toHTML()
-              );
-            },
-          },
-        }),
-        toHTML(),
-      ],
-    }),
-    new Main({
-      children: [],
-    }),
-    new Footer({}),
-  ],
-});
-
-app.addChildren([]);
-
-const App = app.toHTML();
-
-const [header, main, footer] = App.children;
-const randomPersonIndex = getRandomNumber(PERSON_BY_DEFAULT.length);
-
-const player = PERSON_BY_DEFAULT[randomPersonIndex];
-
-appendElement(
-  main,
-  new Component({
-    tagName: "div",
-    className: "person",
-    html: `
-    <h2 class='person-data'>Name : ${player.getName()}</h2>
-    <h3 class='person-data'>Age : ${player.getAge()}</h3>
-    <h3 class='person-data'>Salary : ${player.getSalary()}</h3>
-    <h3 class='person-data'>Balance : ${player.getBalance()}</h3>
-
-    <h3 class='person-data'>Relations : ${
-      player.getRel() ? player.getRel() : "Single"
-    }</h3>
-
-    <div class="person-img-wrapper">
-        <img class='person-img' src="${player.getAvatar()}"/>
-    </div>
-    `,
-  }).toHTML()
-);
-
-appendElement(root, App);
