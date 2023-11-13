@@ -60,11 +60,3 @@ async function getDataByEnpoing(url: string, endpoint: string) {
 
   console.log(parsedData);
 }
-
-const data = await fetch(`${url}`);
-
-const parsedData = await data.json();
-
-const randomIndex = Math.floor(Math.random() * parsedData.length);
-
-const randomisedData = parsedData[randomIndex];
