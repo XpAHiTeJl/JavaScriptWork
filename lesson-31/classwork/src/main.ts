@@ -29,14 +29,25 @@ header.addEventListener("click", (e) => {
   const getPhotosCondition =
     textContent?.includes(ButtonsLinks.PHOTOS) &&
     textContent?.includes(ButtonsFunction.GET);
+  const hidePhotosCondition =
+    textContent?.includes(ButtonsLinks.PHOTOS) &&
+    textContent?.includes(ButtonsFunction.HIDE);
 
   const getPostsCondition =
     textContent?.includes(ButtonsLinks.POSTS) &&
     textContent?.includes(ButtonsFunction.GET);
 
+  const hidePostsCondition =
+    textContent?.includes(ButtonsLinks.POSTS) &&
+    textContent?.includes(ButtonsFunction.HIDE);
+
   if (getPhotosCondition) {
     getDataByEnpoing(BASE_URL, ButtonsLinks.PHOTOS);
+  } else if (hidePhotosCondition) {
+    getDataByEnpoing(BASE_URL, ButtonsLinks.PHOTOS);
   } else if (getPostsCondition) {
+    getDataByEnpoing(BASE_URL, ButtonsLinks.POSTS);
+  } else if (hidePostsCondition) {
     getDataByEnpoing(BASE_URL, ButtonsLinks.POSTS);
   } else {
     console.log("Erroe!");
@@ -49,3 +60,11 @@ async function getDataByEnpoing(url: string, endpoint: string) {
 
   console.log(parsedData);
 }
+
+const data = await fetch(`${url}`);
+
+const parsedData = await data.json();
+
+const randomIndex = Math.floor(Math.random() * parsedData.length);
+
+const randomisedData = parsedData[randomIndex];
