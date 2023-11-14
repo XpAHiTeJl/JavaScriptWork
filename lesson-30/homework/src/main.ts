@@ -69,6 +69,7 @@ const trains = [
   },
 ];
 console.log("FullTrains", trains);
+
 // !Color
 const findByColor = (trains, color) => {
   const found = [];
@@ -123,3 +124,27 @@ const findById = (trains, id) => {
 
 const resid = findById(trains, "3");
 console.log("TrainID", resid);
+
+// !Colodr + ID
+const findByIdColor = (trains, color, id) => {
+  const found = [];
+
+  trains.forEach((train) => {
+    const carriages = train.carriages.filter(
+      (carriages) => carriages.id === id && carriages.color === color
+    );
+
+    carriages.forEach((carriage) => {
+      found.push({
+        name: train.driver,
+        color: carriage.color,
+        id: carriage.id,
+      });
+    });
+  });
+
+  return found;
+};
+
+const residcolor = findByIdColor(trains, "blue", "3");
+console.log("TrainIDColor", residcolor);
