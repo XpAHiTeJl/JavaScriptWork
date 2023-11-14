@@ -1,28 +1,3 @@
-import "./style.css";
-import typescriptLogo from "./typescript.svg";
-import viteLogo from "/vite.svg";
-import { setupCounter } from "./counter.ts";
-
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-//   <div>
-//     <a href="https://vitejs.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://www.typescriptlang.org/" target="_blank">
-//       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-//     </a>
-//     <h1>Vite + TypeScript</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite and TypeScript logos to learn more
-//     </p>
-//   </div>
-// `;
-
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
-
 enum Driver {
   John = "John",
   Jim = "Jim",
@@ -38,36 +13,89 @@ enum Color {
 const trains = [
   {
     driver: Driver.John,
-    carriages: {
-      color: Color.blue,
-      id: "8",
-    },
+    carriages: [
+      {
+        color: Color.blue,
+        id: "1",
+      },
+      {
+        color: Color.yellow,
+        id: "2",
+      },
+      {
+        color: Color.blue,
+        id: "3",
+      },
+    ],
   },
   {
     driver: Driver.Jim,
-    carriages: {
-      color: Color.yellow,
-      id: "3",
-    },
+    carriages: [
+      {
+        color: Color.yellow,
+        id: "4",
+      },
+      {
+        color: Color.darkmagenta,
+        id: "5",
+      },
+    ],
   },
   {
     driver: Driver.Mike,
-    carriages: {
-      color: Color.darkmagenta,
-      id: "5",
-    },
+    carriages: [
+      {
+        color: Color.darkmagenta,
+        id: "6",
+      },
+    ],
   },
   {
     driver: Driver.Tyson,
-    carriages: {
-      color: Color.blue,
-      id: "1",
-    },
+    carriages: [
+      {
+        color: Color.darkmagenta,
+        id: "7",
+      },
+      {
+        color: Color.blue,
+        id: "8",
+      },
+      {
+        color: Color.yellow,
+        id: "9",
+      },
+    ],
   },
 ];
+// console.log(trains);
 
-for (const poezd of trains) {
-  console.log(poezd);
-}
+const findByColor = (trains, color) => {
+  const found = [];
 
-console.log(trains);
+  trains.forEach((train) => {
+    const carriages = train.carriages.filter(
+      (carriages) => carriages.color === color
+    );
+    if (Array.isArray(carriages)) {
+      carriages.forEach((carriage) => {
+        found.push({
+          name: train.driver,
+          color: carriage.color,
+          id: carriage.id,
+        });
+      });
+    } else {
+      found.push({
+        name: train.driver,
+        color: carriages.color,
+        id: carriages.id,
+      });
+    }
+  });
+
+  return found;
+};
+
+const res = findByColor(trains, "darkmagenta");
+console.log("Train", res);
