@@ -71,12 +71,11 @@ const trains = [
 console.log("FullTrains", trains);
 
 // !Color
-const findByColor = (trains, color) => {
-  const found = [];
-
-  trains.forEach((train) => {
+const findByColor = (trains: any[], color: string) => {
+  const found: { name: string; color: string; id: number }[] = [];
+  trains.forEach((train: { carriages: any[]; driver: string }) => {
     const carriages = train.carriages.filter(
-      (carriages) => carriages.color === color
+      (carriages: { color: any }) => carriages.color === color
     );
     if (Array.isArray(carriages)) {
       carriages.forEach((carriage) => {
@@ -86,31 +85,22 @@ const findByColor = (trains, color) => {
           id: carriage.id,
         });
       });
-    } else {
-      found.push({
-        name: train.driver,
-        color: carriages.color,
-        id: carriages.id,
-      });
     }
   });
 
   return found;
 };
-
 const resId = findByColor(trains, "darkmagenta");
-console.log("TrainColor", resId);
+console.log("Train Color", resId);
 
 // ! Id
-const findById = (trains, id) => {
-  const found = [];
-
-  trains.forEach((train) => {
+const findById = (trains: any[], id: string) => {
+  const found: { name: string; color: string; id: number }[] = [];
+  trains.forEach((train: { carriages: any[]; driver: any }) => {
     const carriages = train.carriages.filter(
-      (carriages) => carriages.id === id
+      (carriages: { id: any }) => carriages.id === id
     );
-
-    carriages.forEach((carriage) => {
+    carriages.forEach((carriage: { color: string; id: number }) => {
       found.push({
         name: train.driver,
         color: carriage.color,
@@ -121,20 +111,20 @@ const findById = (trains, id) => {
 
   return found;
 };
-
-const resid = findById(trains, "3");
-console.log("TrainID", resid);
+const resid = findById(trains, "6");
+console.log("Train ID", resid);
 
 // !Colodr + ID
-const findByIdColor = (trains, color, id) => {
-  const found = [];
+const findByIdColor = (trains: any[], color: string, id: string) => {
+  const found: { name: string; color: string; id: any }[] = [];
 
-  trains.forEach((train) => {
+  trains.forEach((train: { carriages: any[]; driver: any }) => {
     const carriages = train.carriages.filter(
-      (carriages) => carriages.id === id && carriages.color === color
+      (carriages: { id: any; color: string }) =>
+        carriages.id === id && carriages.color === color
     );
 
-    carriages.forEach((carriage) => {
+    carriages.forEach((carriage: { color: string; id: any }) => {
       found.push({
         name: train.driver,
         color: carriage.color,
@@ -145,6 +135,5 @@ const findByIdColor = (trains, color, id) => {
 
   return found;
 };
-
 const residcolor = findByIdColor(trains, "blue", "3");
-console.log("TrainIDColor", residcolor);
+console.log("TrainID+Color", residcolor);
