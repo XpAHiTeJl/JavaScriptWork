@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <button id="Add" class="Add">Add</button>
+        <button class="Remove">Remove</button>
+        <div id="formPerson" class="formPerson">
+          <div class="formpersontable">
+            <input id="Name" type="Name" placeholder="Введи имя" />
+            <input id="Age" type="Age" placeholder="Введи возраст" />
+            <select id="select">
+              <option value="">--Выбери пол--</option>
+              <option value="Male">Male</option>
+              <option value="Feminism">Feminism</option>
+            </select>
+          </div>
+          <div class="checkboxblock">
+            <input type="checkbox" id="scales" name="scales" />
+            <label for="scales">Redy?</label>
+          </div>
+          <button id="addperson" class="addperson">Добавить</button>
+        </div>
+      </header>
+      <main class="main">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Redy</th>
+            </tr>
+            <tr>
+              <td class="main-name"></td>
+              <td class="main-age">dqeqw</td>
+              <td class="main-gender">dqeqw</td>
+              <td>dqeqw</td>
+            </tr>
+          </thead>
+        </table>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
