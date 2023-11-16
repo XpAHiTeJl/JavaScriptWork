@@ -27,12 +27,10 @@ addperson.addEventListener("click", (e) => {
   console.log("Пол:", select.value);
   console.log("Готовность:", checkbox.checked);
   console.log("--------------------");
-  // nameprofil();
-  // ageprofil();
-  // genderprofil();
-  // redyprofile();
-  const block = document.createElement("div");
+
+  const block = document.createElement("tr");
   block.className = "main-profile";
+
   appendElement(tablea, block);
   nameprofil();
   ageprofil();
