@@ -51,19 +51,12 @@ addperson.addEventListener("click", (e) => {
       new Component({
         tagName: "td",
         className: "td",
-        textContent: document.getElementById("scales").checked,
+        textContent: new Boolean(document.getElementById("scales").checked),
       }),
     ],
   });
   appendElement(tablea, block);
-
-  document.querySelector("#Name").value = "";
-
-  document.querySelector("#Age").value = "";
-
-  document.querySelector("#select").value = "";
-
-  document.querySelector("#scales").checked = "";
+  clearValue();
 });
 
 // function nameprofil() {
@@ -115,3 +108,13 @@ addperson.addEventListener("click", (e) => {
 const appendElement = (node, element) => {
   node.append(element);
 };
+
+function clearValue() {
+  document.querySelector("#Name").value = "";
+
+  document.querySelector("#Age").value = "";
+
+  document.querySelector("#select").value = "";
+
+  document.querySelector("#scales").checked = "";
+}

@@ -2,6 +2,12 @@ import { append, appendMany } from "./append";
 
 import { isExisting } from "./isExisting";
 
+interface IComponent {
+  tagName: string;
+  className: string;
+  textContent: Boolean;
+}
+
 export class Component {
   constructor({
     tagName,
@@ -11,7 +17,7 @@ export class Component {
     children,
     events,
     ...attrs
-  }) {
+  }: IComponent) {
     if (!tagName) return;
     this.tagName = tagName;
     this.className = className;
