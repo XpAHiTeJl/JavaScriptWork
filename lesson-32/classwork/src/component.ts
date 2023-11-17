@@ -3,8 +3,8 @@ import { append, appendMany } from "./append";
 import { isExisting } from "./isExisting";
 
 interface IComponent {
-  tagName: string;
-  className: string;
+  tagName: String;
+  className: String;
   textContent: Boolean;
 }
 
@@ -16,6 +16,7 @@ export class Component {
     html,
     children,
     events,
+    type,
     ...attrs
   }: IComponent) {
     if (!tagName) return;
@@ -25,12 +26,14 @@ export class Component {
     this.html = html;
     this.children = children;
     if (events) this.events = events;
+    if (type) this.type = type;
     this.attrs = attrs;
 
     const element = document.createElement(this.tagName);
     if (this.className) element.className = this.className;
     if (this.textContent) element.textContent = this.textContent;
     if (this.html) element.insertAdjacentHTML(html.position, html.htmlText);
+    if (this.type) element.type = this.type;
 
     if (this.children) {
       for (const child of this.children) {

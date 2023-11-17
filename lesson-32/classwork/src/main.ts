@@ -53,6 +53,11 @@ addperson.addEventListener("click", (e) => {
         className: "td",
         textContent: new Boolean(document.getElementById("scales").checked),
       }),
+      new Component({
+        tagName: "input",
+        className: "checkplayer",
+        type: "checkbox",
+      }),
     ],
   });
   appendElement(tablea, block);
