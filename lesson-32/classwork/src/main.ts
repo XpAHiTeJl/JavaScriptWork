@@ -1,4 +1,5 @@
 import "./style.scss";
+import { Component } from "./component";
 
 const addbtn = document.querySelector("#Add");
 const formPerson = document.querySelector("#formPerson");
@@ -28,59 +29,75 @@ addperson.addEventListener("click", (e) => {
   console.log("Готовность:", checkbox.checked);
   console.log("--------------------");
 
-  const block = document.createElement("tr");
-  block.className = "main-profile";
-
+  const block = new Component({
+    tagName: "tr",
+    className: "main-profile",
+    children: [
+      new Component({
+        tagName: "td",
+        className: "td",
+        textContent: document.getElementById("Name").value,
+      }),
+      new Component({
+        tagName: "td",
+        className: "td",
+        textContent: document.getElementById("Age").value,
+      }),
+      new Component({
+        tagName: "td",
+        className: "td",
+        textContent: document.getElementById("select").value,
+      }),
+      new Component({
+        tagName: "td",
+        className: "td",
+        textContent: document.getElementById("scales").checked,
+      }),
+    ],
+  });
   appendElement(tablea, block);
-  nameprofil();
-  ageprofil();
-  genderprofil();
-  redyprofile();
-  // appendElement(namemain, document.querySelector("#Name").value);
+
   document.querySelector("#Name").value = "";
 
-  // appendElement(mainage, document.querySelector("#Age").value);
   document.querySelector("#Age").value = "";
 
-  // appendElement(maingender, document.querySelector("#select").value);
   document.querySelector("#select").value = "";
 
-  // appendElement(checkboxredy, document.querySelector("#scales").checked);
   document.querySelector("#scales").checked = "";
 });
 
-function nameprofil() {
-  let value = document.getElementById("Name").value;
-  if (!value) return;
-  let container = document.createElement("td");
-  container.className = "td";
-  container.innerHTML = value;
-  document.querySelector(".main-profile").appendChild(container);
-}
-function ageprofil() {
-  let value = document.getElementById("Age").value;
-  if (!value) return;
-  let container = document.createElement("td");
-  container.className = "td";
-  container.innerHTML = value;
-  document.querySelector(".main-profile").appendChild(container);
-}
-function genderprofil() {
-  let value = document.getElementById("select").value;
-  if (!value) return;
-  let container = document.createElement("td");
-  container.className = "td";
-  container.innerHTML = value;
-  document.querySelector(".main-profile").appendChild(container);
-}
-function redyprofile() {
-  let value = document.getElementById("scales").checked;
-  if (!value) return;
-  let container = document.createElement("td");
-  container.className = "td";
-  container.innerHTML = value;
-  document.querySelector(".main-profile").appendChild(container);
-}
+// function nameprofil() {
+//   let value = document.getElementById("Name").value;
+//   if (!value) return;
+//   let container = document.createElement("td");
+//   container.className = "td";
+//   container.innerHTML = value;
+//   document.querySelector(".main-profile").appendChild(container);
+// }
+// function ageprofil() {
+//   let value = document.getElementById("Age").value;
+//   if (!value) return;
+//   let container = document.createElement("td");
+//   container.className = "td";
+//   container.innerHTML = value;
+//   document.querySelector(".main-profile").appendChild(container);
+// }
+// function genderprofil() {
+//   let value = document.getElementById("select").value;
+//   if (!value) return;
+//   let container = document.createElement("td");
+//   container.className = "td";
+//   container.innerHTML = value;
+//   document.querySelector(".main-profile").appendChild(container);
+// }
+// function redyprofile() {
+//   let value = document.getElementById("scales").checked;
+//   if (!value) return;
+//   let container = document.createElement("td");
+//   container.className = "td";
+//   container.innerHTML = value;
+//   document.querySelector(".main-profile").appendChild(container);
+// }
 
 // namemain.appendChild(
 //   document.createTextNode(document.querySelector("#Name").value)
