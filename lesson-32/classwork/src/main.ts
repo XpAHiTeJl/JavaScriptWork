@@ -68,10 +68,13 @@ addperson.addEventListener("click", (e) => {
 });
 
 removebtn.addEventListener("click", (e) => {
-  const checcheck = document.querySelector(".checkplayer").checked;
+  let profpers = document.querySelectorAll(".main-profile");
+  for (const fulmain of profpers) {
+    let brovs = fulmain.children[4];
 
-  if (checcheck === true) {
-    console.log("udalit");
+    if (brovs.checked === true) {
+      console.log(brovs);
+    }
   }
 });
 
