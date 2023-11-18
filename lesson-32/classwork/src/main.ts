@@ -1,6 +1,7 @@
 import "./style.scss";
 import { Component } from "./component";
 import { render } from "./render";
+import { remove } from "./append";
 
 const addbtn = document.querySelector("#Add");
 const removebtn = document.querySelector("#Remove");
@@ -62,14 +63,16 @@ addperson.addEventListener("click", (e) => {
       }),
     ],
   });
-
-  removebtn.addEventListener("click", (e) => {
-    // removethisbtn = document.querySelector(".checkplayer").value;
-    console.log("removethisbtn");
-  });
-
   appendElement(tablea, block);
   clearValue();
+});
+
+removebtn.addEventListener("click", (e) => {
+  const checcheck = document.querySelector(".checkplayer").checked;
+
+  if (checcheck === true) {
+    console.log("udalit");
+  }
 });
 
 // function nameprofil() {
