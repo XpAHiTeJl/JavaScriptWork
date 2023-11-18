@@ -1,7 +1,9 @@
 import "./style.scss";
 import { Component } from "./component";
+import { render } from "./render";
 
 const addbtn = document.querySelector("#Add");
+const removebtn = document.querySelector("#Remove");
 const formPerson = document.querySelector("#formPerson");
 const addperson = document.querySelector("#addperson");
 const name = document.querySelector("#Name");
@@ -60,6 +62,12 @@ addperson.addEventListener("click", (e) => {
       }),
     ],
   });
+
+  removebtn.addEventListener("click", (e) => {
+    // removethisbtn = document.querySelector(".checkplayer").value;
+    console.log("removethisbtn");
+  });
+
   appendElement(tablea, block);
   clearValue();
 });
