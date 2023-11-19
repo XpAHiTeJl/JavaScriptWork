@@ -73,7 +73,8 @@ removebtn.addEventListener("click", (e) => {
     let brovs = fulmain.children[4];
 
     if (brovs.checked === true) {
-      console.log(brovs);
+      brovs.parentElement?.remove();
+      // console.log(brovs);
     }
   }
 });
