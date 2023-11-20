@@ -1,7 +1,6 @@
 import "./style.scss";
 import { Component } from "./component";
-import { render } from "./render";
-import { remove } from "./append";
+import { append } from "./append";
 
 const addbtn = document.querySelector("#Add");
 const removebtn = document.querySelector("#Remove");
@@ -11,10 +10,6 @@ const name = document.querySelector("#Name");
 const age = document.querySelector("#Age");
 const select = document.querySelector("#select");
 const checkbox = document.querySelector("#scales");
-const checkboxredy = document.querySelector(".checkbox-redy");
-const namemain = document.querySelector(".main-name");
-const mainage = document.querySelector(".main-age");
-const maingender = document.querySelector(".main-gender");
 const tablea = document.querySelector("#tablea");
 
 addbtn.addEventListener("click", (e) => {
@@ -63,7 +58,7 @@ addperson.addEventListener("click", (e) => {
       }),
     ],
   });
-  appendElement(tablea, block);
+  append(tablea, block);
   clearValue();
 });
 
@@ -74,10 +69,19 @@ removebtn.addEventListener("click", (e) => {
 
     if (brovs.checked === true) {
       brovs.parentElement?.remove();
-      // console.log(brovs);
     }
   }
 });
+
+function clearValue() {
+  document.querySelector("#Name").value = "";
+
+  document.querySelector("#Age").value = "";
+
+  document.querySelector("#select").value = "";
+
+  document.querySelector("#scales").checked = "";
+}
 
 // function nameprofil() {
 //   let value = document.getElementById("Name").value;
@@ -124,17 +128,3 @@ removebtn.addEventListener("click", (e) => {
 // checkboxredy.appendChild(
 //   document.createTextNode(document.querySelector("#scales").checked)
 // );
-
-const appendElement = (node, element) => {
-  node.append(element);
-};
-
-function clearValue() {
-  document.querySelector("#Name").value = "";
-
-  document.querySelector("#Age").value = "";
-
-  document.querySelector("#select").value = "";
-
-  document.querySelector("#scales").checked = "";
-}
