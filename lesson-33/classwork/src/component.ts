@@ -9,6 +9,7 @@ interface IComponent {
 }
 
 export class Component implements IComponent {
+  style: any;
   constructor({ tagName, className, textContent, children, events, ...attrs }) {
     if (!tagName) return;
     this.tagName = tagName;
