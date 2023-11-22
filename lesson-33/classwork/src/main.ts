@@ -51,23 +51,10 @@ async function parametr() {
           clearInterval(countdownInterval);
           removemenu();
         }
-        // const nextime = document.getElementsByClassName("button-stay");
-        // nextime[0].addEventListener("click", (e) => {
-        //   counter = 10;
-        // });
-        // const stoptime = document.querySelector(".button-leave");
-        // stoptime?.addEventListener("click", (e) => {
-        //   removemenu();
-        // });
       }, 1000);
 
       append(app, modal);
-      function removemenu() {
-        clearInterval(countdownInterval);
-        modal.remove();
-        timer.remove();
-        main.remove();
-      }
+
       setTimeout(() => {
         const nextime = document.getElementsByClassName("button-stay");
         nextime[0].addEventListener("click", (e) => {
@@ -78,6 +65,13 @@ async function parametr() {
           removemenu();
         });
       }, 1000);
+
+      function removemenu() {
+        clearInterval(countdownInterval);
+        modal.remove();
+        timer.remove();
+        main.remove();
+      }
     }
 
     append(app, timer);
