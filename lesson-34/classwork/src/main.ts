@@ -7,10 +7,19 @@ const selectmenu2 = document.querySelector(".selectmenu2");
 const resultbtn = document.querySelector(".resultbtn");
 
 removeselect();
+
 function removeselect() {
   selectmenu1?.addEventListener("change", (e) => {
     const targetselect1 = e.target.value;
     console.log(targetselect1);
+    for (let i = 0; i < selectmenu2.length; i++) {
+      const element = selectmenu2[i];
+
+      if (element.value === targetselect1) {
+        element.remove();
+        console.log("123");
+      }
+    }
   });
 
   selectmenu2?.addEventListener("change", (e) => {
