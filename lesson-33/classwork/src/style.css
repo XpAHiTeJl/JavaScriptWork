@@ -40,6 +40,9 @@ h1 {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo {
@@ -64,6 +67,7 @@ h1 {
 }
 
 button {
+  margin: 25px;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -93,4 +97,32 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.loader {
+  display: flex;
+  border: 13px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid darkmagenta;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modal {
+  position: relative;
+  top: 110px;
+}
+.countdown {
+  font-size: 50px;
 }

@@ -3,20 +3,13 @@ import { append, appendMany } from "./append";
 import { isExisting } from "./isExisting";
 
 interface IComponent {
-  tagName: String;
+  tagName: string;
   className: String;
   textContent: Boolean;
 }
 
-export class Component {
-  constructor({
-    tagName: String,
-    className,
-    textContent,
-    children,
-    events,
-    ...attrs
-  }: IComponent) {
+export class Component implements IComponent {
+  constructor({ tagName, className, textContent, children, events, ...attrs }) {
     if (!tagName) return;
     this.tagName = tagName;
     this.className = className;
