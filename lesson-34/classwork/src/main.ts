@@ -6,17 +6,24 @@ const selectmenu1 = document.querySelector(".selectmenu1");
 const selectmenu2 = document.querySelector(".selectmenu2");
 const resultbtn = document.querySelector(".resultbtn");
 
+removeselect();
+function removeselect() {
+  selectmenu1?.addEventListener("change", (e) => {
+    const targetselect1 = e.target.value;
+    console.log(targetselect1);
+  });
+
+  selectmenu2?.addEventListener("change", (e) => {
+    const targetselect2 = e.target.value;
+    console.log(targetselect2);
+  });
+}
+
 let kurs = { USD: 36, EUR: 39, UAH: 1 };
 
 resultbtn.addEventListener("click", (e) => {
   sum();
 });
-removeselect();
-function removeselect() {
-  if (selectmenu1.value === selectmenu2.value) {
-  }
-}
-
 function sum() {
   let s = 0;
 
