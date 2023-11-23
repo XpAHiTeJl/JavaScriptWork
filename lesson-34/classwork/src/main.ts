@@ -16,8 +16,7 @@ function removeselect() {
       const element = selectmenu2[i];
 
       if (element.value === targetselect1) {
-        element.remove();
-        console.log("123");
+        element.classList.toggle("hidden");
       }
     }
   });
