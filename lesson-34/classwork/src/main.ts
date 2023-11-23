@@ -17,6 +17,8 @@ function removeselect() {
 
       if (element.value === targetselect1) {
         element.classList.toggle("hidden");
+      } else {
+        element.classList.remove("hidden");
       }
     }
   });
@@ -24,6 +26,15 @@ function removeselect() {
   selectmenu2?.addEventListener("change", (e) => {
     const targetselect2 = e.target.value;
     console.log(targetselect2);
+    for (let i = 0; i < selectmenu1.length; i++) {
+      const element = selectmenu1[i];
+
+      if (element.value === targetselect2) {
+        element.classList.toggle("hidden");
+      } else {
+        element.classList.remove("hidden");
+      }
+    }
   });
 }
 
