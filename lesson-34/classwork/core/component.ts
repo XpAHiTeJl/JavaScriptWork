@@ -9,6 +9,9 @@ interface IComponent {
 }
 
 export class Component implements IComponent {
+  remove() {
+    throw new Error("Method not implemented.");
+  }
   style: any;
   constructor({ tagName, className, textContent, children, events, ...attrs }) {
     if (!tagName) return;
