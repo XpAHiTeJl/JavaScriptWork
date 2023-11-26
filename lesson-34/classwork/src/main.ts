@@ -3,7 +3,7 @@ import "./style.css";
 import { Component, append } from "../core";
 
 const app = document.querySelector("#app");
-const valutetext = document.querySelector(".valutetext");
+const valutetext = document.querySelectorAll(".valutetext");
 const resultmenu = document.querySelector(".result-menu");
 const selectmenu1 = document.querySelector(".selectmenu1");
 const selectmenu2 = document.querySelector(".selectmenu2");
@@ -74,80 +74,82 @@ function sum() {
     sum();
   };
 }
+backgroundmodal();
+function backgroundmodal() {
+  let counter = 0;
 
-parametr();
-async function parametr() {
-  await setTimeout(() => {
-    modalWindowBack.classList.toggle("hidden");
+  valutetext.forEach((input) => {
+    input.addEventListener("blur", () => {
+      counter++;
+      console.log(`Количество потерянных фокусов: ${counter}`);
 
-    const main = new Component({
-      tagName: "div",
-      className: "main-timer",
-      children: [
-        new Component({
-          tagName: "button",
-          className: "button-stay",
-          textContent: "Я тут",
-        }),
-        new Component({
-          tagName: "button",
-          className: "button-leave",
-          textContent: "Меня нет",
-        }),
-      ],
-    });
-
-    const timer = new Component({
-      tagName: "div",
-      className: "loader",
-      children: addtimers(),
-    });
-
-    function addtimers() {
-      const modal = document.createElement("div");
-      modal.classList.add("modal");
-      document.body.appendChild(modal);
-
-      // Создаем элемент счетчика
-      const countdown = document.createElement("div");
-      countdown.classList.add("countdown");
-      modal.appendChild(countdown);
-
-      // Обратный отсчет
-      let counter = 100;
-      const countdownInterval = setInterval(() => {
-        countdown.textContent = counter;
-        counter -= 1;
-
-        if (counter < 0) {
-          clearInterval(countdownInterval);
-          removemenu();
+      if (counter > 2) {
+        parametr();
+        async function parametr() {
+          await setTimeout(() => {
+            modalWindowBack.classList.toggle("hidden");
+            const main = new Component({
+              tagName: "div",
+              className: "main-timer",
+              children: [
+                new Component({
+                  tagName: "button",
+                  className: "button-stay",
+                  textContent: "Я тут",
+                }),
+                new Component({
+                  tagName: "button",
+                  className: "button-leave",
+                  textContent: "Меня нет",
+                }),
+              ],
+            });
+            const timer = new Component({
+              tagName: "div",
+              className: "loader",
+              children: addtimers(),
+            });
+            function addtimers() {
+              const modal = document.createElement("div");
+              modal.classList.add("modal");
+              document.body.appendChild(modal);
+              const countdown = document.createElement("div");
+              countdown.classList.add("countdown");
+              modal.appendChild(countdown);
+              // Обратный отсчет
+              let counter = 10;
+              const countdownInterval = setInterval(() => {
+                countdown.textContent = counter;
+                counter -= 1;
+                if (counter < 0) {
+                  clearInterval(countdownInterval);
+                  removemenu();
+                }
+              }, 1000);
+              append(app, modal);
+              setTimeout(() => {
+                const nextime = document.getElementsByClassName("button-stay");
+                nextime[0].addEventListener("click", (e) => {
+                  counter = 10;
+                });
+                const stoptime = document.querySelector(".button-leave");
+                stoptime?.addEventListener("click", (e) => {
+                  removemenu();
+                  modalWindowBack.classList.toggle("hidden");
+                });
+              }, 1000);
+              function removemenu() {
+                clearInterval(countdownInterval);
+                modal.remove();
+                timer.remove();
+                main.remove();
+              }
+            }
+            append(app, timer);
+            append(app, main);
+          }, 1);
         }
-      }, 1000);
-
-      append(app, modal);
-
-      setTimeout(() => {
-        const nextime = document.getElementsByClassName("button-stay");
-        nextime[0].addEventListener("click", (e) => {
-          counter = 10;
-        });
-        const stoptime = document.querySelector(".button-leave");
-        stoptime?.addEventListener("click", (e) => {
-          removemenu();
-          modalWindowBack.classList.toggle("hidden");
-        });
-      }, 1000);
-
-      function removemenu() {
-        clearInterval(countdownInterval);
-        modal.remove();
-        timer.remove();
-        main.remove();
       }
-    }
-
-    append(app, timer);
-    append(app, main);
-  }, 3000);
+    });
+  });
 }
