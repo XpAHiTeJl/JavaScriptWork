@@ -86,7 +86,7 @@ button:focus-visible {
 
 .loader {
   display: flex;
-  border: 0px solid #f3f3f3;
+  border: 12px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid darkmagenta;
   width: 120px;
@@ -94,7 +94,7 @@ button:focus-visible {
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   position: relative;
-  left: 50px;
+  left: 42px;
 }
 
 @keyframes spin {
@@ -109,7 +109,7 @@ button:focus-visible {
 
 .modal {
   position: relative;
-  top: 100px;
+  top: 110px;
 }
 
 .countdown {
