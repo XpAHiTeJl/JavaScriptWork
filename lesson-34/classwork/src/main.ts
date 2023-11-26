@@ -1,5 +1,4 @@
 import "./style.css";
-
 const valutetext = document.querySelector(".valutetext");
 const resultmenu = document.querySelector(".result-menu");
 const selectmenu1 = document.querySelector(".selectmenu1");
