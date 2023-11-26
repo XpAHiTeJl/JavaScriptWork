@@ -1,4 +1,7 @@
 import "./style.css";
+
+import { Component } from "../core";
+
 const valutetext = document.querySelector(".valutetext");
 const resultmenu = document.querySelector(".result-menu");
 const selectmenu1 = document.querySelector(".selectmenu1");
@@ -37,12 +40,13 @@ function removeselect() {
   });
 }
 
-let kurs = { USD: 36, EUR: 39, UAH: 1 };
-
 resultbtn.addEventListener("click", (e) => {
   sum();
 });
+
 function sum() {
+  let kurs = { USD: 36, EUR: 39, UAH: 1 };
+
   let s = 0;
 
   if (selectmenu1.value === selectmenu2.value) {
