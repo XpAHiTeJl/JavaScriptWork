@@ -114,7 +114,7 @@ async function parametr() {
       modal.appendChild(countdown);
 
       // Обратный отсчет
-      let counter = 10;
+      let counter = 100;
       const countdownInterval = setInterval(() => {
         countdown.textContent = counter;
         counter -= 1;

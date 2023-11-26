@@ -93,6 +93,8 @@ button:focus-visible {
   height: 120px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+  position: relative;
+  left: 50px;
 }
 
 @keyframes spin {
@@ -107,7 +109,7 @@ button:focus-visible {
 
 .modal {
   position: relative;
-  top: 110px;
+  top: 100px;
 }
 
 .countdown {
@@ -115,7 +117,12 @@ button:focus-visible {
 }
 
 .main-timer {
-  z-index: 5;
+  margin: 10px;
+}
+
+.button-stay,
+.button-leave {
+  margin: 5px;
 }
 
 .main-block {
