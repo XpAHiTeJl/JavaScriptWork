@@ -2,7 +2,7 @@ import "./style.css";
 
 import { App } from "./apps";
 import { setSpinner } from "./store";
-import { setInfoBox } from "../store/getInfoBox";
+import { setInfoBox } from "./store/getInfoBox";
 
 setSpinner();
 setInfoBox();
