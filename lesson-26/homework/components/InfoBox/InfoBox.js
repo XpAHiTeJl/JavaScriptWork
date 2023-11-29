@@ -21,8 +21,18 @@ export class InfoBox {
   set info(infoRows) {
     const infos = [];
 
-    for (const row of infoRows) {
-      infos.push(new Info(row).infoElement);
+    if (infoRows.length > 0) {
+      for (const row of infoRows) {
+        infos.push(new Info(row).infoElement);
+      }
+    } else {
+      infos.push(
+        new AdvancedComponent({
+          tagName: "h3",
+          textContent:
+            "To obtain data, click on the appropriate button in the top menu.",
+        })
+      );
     }
 
     render(this.#wrapper, infos);

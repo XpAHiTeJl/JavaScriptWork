@@ -1,33 +1,20 @@
-import { AdvancedComponent, append } from "../../core";
-import { fetchData, getInfoBox, getSpinner } from "../../store";
+import { AdvancedComponent } from "../../core";
 
 export class Button {
+  #isActive;
   #component;
   #key;
-  #URL;
 
   constructor(key) {
     this.#key = key || "";
 
-    this.#URL = `https://swapi.dev/api/${this.#key}`;
+    this.#isActive = false;
 
     this.#component = new AdvancedComponent({
       tagName: "button",
+      className: "button",
       id: this.#key,
-      textContent: this.#key,
-      events: {
-        click: async () => {
-          try {
-            append(app, getSpinner());
-
-            getInfoBox().info = await fetchData(this.#URL);
-
-            getSpinner().remove();
-          } catch (e) {
-            console.error(e);
-          }
-        },
-      },
+      textContent: this.#key[0].toUpperCase() + this.#key.slice(1),
     });
   }
 
@@ -37,5 +24,13 @@ export class Button {
 
   get key() {
     return this.#key;
+  }
+
+  get isActive() {
+    return this.#isActive;
+  }
+
+  set isActive(isActive) {
+    this.#isActive = isActive;
   }
 }

@@ -1,3 +1,3 @@
-import { App } from "./App/App";
+import { Application } from "./Application/Application";
 
-export { App };
+export { Application };

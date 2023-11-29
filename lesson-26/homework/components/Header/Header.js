@@ -1,9 +1,10 @@
-import { Component, render } from "../../core";
-import { getButtons } from "../../store";
+import { Component, append, render } from "../../core";
+import { Button } from "../Button/Button";
 
 export class Header {
   #navElement;
   #component;
+  #buttons;
 
   constructor() {
     this.#navElement = new Component({
@@ -16,14 +17,25 @@ export class Header {
       className: "header",
       children: [this.#navElement],
     });
+
+    this.#buttons = null;
   }
 
-  async setButtons() {
-    const buttons = await getButtons();
-    render(this.#navElement, buttons);
+  setButtons(keys) {
+    this.#buttons = [];
+
+    for (const key of keys) {
+      const btn = new Button(key);
+      this.#buttons.push(btn);
+      append(this.#navElement, btn.component);
+    }
   }
 
   get component() {
     return this.#component;
+  }
+
+  get buttons() {
+    return this.#buttons;
   }
 }
