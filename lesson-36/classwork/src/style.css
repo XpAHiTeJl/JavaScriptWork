@@ -36,12 +36,6 @@ h1 {
   line-height: 1.1;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
 .logo {
   height: 6em;
@@ -133,15 +127,36 @@ body {
   position: relative;
 }
 
-.sahmat {
+.sahmatdown {
   border: 2px solid #333;
   display: grid;
   grid-template-columns: repeat(8, 50px);
   grid-template-rows: repeat(2, 50px);
   position: relative;
+  margin-top: 20px;
 }
 
-.sahmat div {
+.sahmatdown div {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  position: relative;
+}
+
+.sahmatup {
+  border: 2px solid #333;
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(2, 50px);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.sahmatup div {
   width: 50px;
   height: 50px;
   box-sizing: border-box;
@@ -172,11 +187,12 @@ body {
 
 .white {
   background-color: aliceblue;
+  color: red;
 }
 
 .black {
   background-color: darkmagenta;
-  color: #fff;
+  color: black;
 }
 
 .piece {
@@ -187,5 +203,29 @@ body {
   position: absolute;
   z-index: 1;
   background-color: inherit;
-  color: black;
+}
+
+
+#app {
+  display: flex;
+}
+
+.numberssboku {
+  border: 2px solid #333;
+  display: grid;
+  grid-template-columns: repeat(1, 50px);
+  position: relative;
+  height: 402px;
+  top: 124px;
+}
+
+.numberssboku span {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  position: relative;
 }

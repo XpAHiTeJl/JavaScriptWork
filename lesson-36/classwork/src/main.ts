@@ -1,7 +1,9 @@
 import "./style.css";
 const chessboardElement = document.getElementById("chessboard");
-const sahmatElement = document.getElementById("sahmat");
+const sahmatDownElement = document.getElementById("sahmatdown");
+const sahmatupElement = document.getElementById("sahmatup");
 const bukviPoleElement = document.getElementById("polebukvi");
+const numberssboku = document.querySelector(".numberssboku");
 const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 let selectedPiece = null;
 
@@ -34,9 +36,26 @@ for (let col = 0; col < 8; col++) {
   bukviPoleElement.appendChild(letterCell);
 }
 
-// Place a king piece on the board
+const numbers = ["1", "2", "3", "4", "5", "6", "7", "8"];
+for (let col = 0; col < 8; col++) {
+  const letterCell = document.createElement("div");
+  letterCell.className = col % 2 === 0;
+  letterCell.innerHTML = `<span>${numbers[col]}</span>`;
+  numberssboku.appendChild(letterCell);
+}
+
+// тут добавлять в нижний отсек шахматы
 const king = createPiece("white", "♔");
-sahmatElement.appendChild(king);
+sahmatDownElement.appendChild(king);
+const queen = createPiece("white", "♛");
+sahmatDownElement.appendChild(queen);
+
+// тут добавлять в верхний отсек шахматы
+
+const king1 = createPiece("black", "♔");
+sahmatupElement.appendChild(king1);
+const queen1 = createPiece("black", "♛");
+sahmatupElement.appendChild(queen1);
 
 function createPiece(color, type) {
   const piece = document.createElement("div");
