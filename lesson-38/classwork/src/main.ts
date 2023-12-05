@@ -44,6 +44,77 @@ for (let col = 0; col < 8; col++) {
   letterCell.innerHTML = `<span>${numbers[col]}</span>`;
   numberssboku.appendChild(letterCell);
 }
+
+setTimeout(
+  function () {
+    for (var i = 0; i < 8; i++) {
+      peshki(i);
+    }
+  },
+  6000,
+  setTimeout(
+    function () {
+      for (var i = 0; i < 2; i++) {
+        Slon(i);
+      }
+    },
+    5000,
+    setTimeout(
+      function () {
+        for (var i = 0; i < 2; i++) {
+          kon(i);
+        }
+      },
+      4000,
+      setTimeout(
+        function () {
+          for (var i = 0; i < 2; i++) {
+            ladiya(i);
+          }
+        },
+        3000,
+        setTimeout(
+          function () {
+            for (var i = 0; i < 1; i++) {
+              queen(i);
+            }
+          },
+          2000,
+          setTimeout(function () {
+            for (var i = 0; i < 1; i++) {
+              king(i);
+            }
+          }, 1000)
+        )
+      )
+    )
+  )
+);
+
+function king() {
+  sahmatupElement.appendChild(createPiece("black", "♔"));
+  sahmatDownElement.appendChild(createPiece("white", "♔"));
+}
+function queen() {
+  sahmatupElement.appendChild(createPiece("black", "♛"));
+  sahmatDownElement.appendChild(createPiece("white", "♛"));
+}
+function ladiya() {
+  sahmatupElement.appendChild(createPiece("black", "♜"));
+  sahmatDownElement.appendChild(createPiece("white", "♜"));
+}
+function kon() {
+  sahmatupElement.appendChild(createPiece("black", "♞"));
+  sahmatDownElement.appendChild(createPiece("white", "♞"));
+}
+function Slon() {
+  sahmatupElement.appendChild(createPiece("black", "♝"));
+  sahmatDownElement.appendChild(createPiece("white", "♝"));
+}
+function peshki() {
+  sahmatDownElement.appendChild(createPiece("white", "♟"));
+  sahmatupElement.appendChild(createPiece("black", "♟"));
+}
 // Функция для создания фигур
 function createPiece(color, type) {
   const piece = document.createElement("div");
@@ -61,73 +132,3 @@ function createPiece(color, type) {
 
   return piece;
 }
-
-// тут добавлять в верхний отсек шахматы
-const kingUp = createPiece("black", "♔");
-sahmatupElement.appendChild(kingUp);
-const queenUp = createPiece("black", "♛");
-sahmatupElement.appendChild(queenUp);
-const ladiyaUp1 = createPiece("black", "♜");
-sahmatupElement.appendChild(ladiyaUp1);
-const ladiyaUp2 = createPiece("black", "♜");
-sahmatupElement.appendChild(ladiyaUp2);
-const konUp1 = createPiece("black", "♞");
-sahmatupElement.appendChild(konUp1);
-const konUp2 = createPiece("black", "♞");
-sahmatupElement.appendChild(konUp2);
-const slonUp1 = createPiece("black", "♝");
-sahmatupElement.appendChild(slonUp1);
-const slonUp2 = createPiece("black", "♝");
-sahmatupElement.appendChild(slonUp2);
-
-const peshkaUp1 = createPiece("black", "♟");
-sahmatupElement.appendChild(peshkaUp1);
-const peshkaUp2 = createPiece("black", "♟");
-sahmatupElement.appendChild(peshkaUp2);
-const peshkaUp3 = createPiece("black", "♟");
-sahmatupElement.appendChild(peshkaUp3);
-const peshkaUp4 = createPiece("black", "♟");
-sahmatupElement.appendChild(peshkaUp4);
-const peshkaUp5 = createPiece("black", "♟");
-sahmatupElement.appendChild(peshkaUp5);
-const peshkaUp6 = createPiece("black", "♟");
-sahmatupElement.appendChild(peshkaUp6);
-const peshkaUp7 = createPiece("black", "♟");
-sahmatupElement.appendChild(peshkaUp7);
-const peshkaUp8 = createPiece("black", "♟");
-sahmatupElement.appendChild(peshkaUp8);
-
-// тут добавлять в нижний отсек шахматы
-const kingDown = createPiece("white", "♔");
-sahmatDownElement.appendChild(kingDown);
-const queenDown = createPiece("white", "♛");
-sahmatDownElement.appendChild(queenDown);
-const ladiyaDown1 = createPiece("white", "♜");
-sahmatDownElement.appendChild(ladiyaDown1);
-const ladiyaDown2 = createPiece("white", "♜");
-sahmatDownElement.appendChild(ladiyaDown2);
-const konDown1 = createPiece("white", "♞");
-sahmatDownElement.appendChild(konDown1);
-const konDown2 = createPiece("white", "♞");
-sahmatDownElement.appendChild(konDown2);
-const slonDown1 = createPiece("white", "♝");
-sahmatDownElement.appendChild(slonDown1);
-const slonDown2 = createPiece("white", "♝");
-sahmatDownElement.appendChild(slonDown2);
-//
-const peshkaDown1 = createPiece("white", "♟");
-sahmatDownElement.appendChild(peshkaDown1);
-const peshkaDown2 = createPiece("white", "♟");
-sahmatDownElement.appendChild(peshkaDown2);
-const peshkaDown3 = createPiece("white", "♟");
-sahmatDownElement.appendChild(peshkaDown3);
-const peshkaDown4 = createPiece("white", "♟");
-sahmatDownElement.appendChild(peshkaDown4);
-const peshkaDown5 = createPiece("white", "♟");
-sahmatDownElement.appendChild(peshkaDown5);
-const peshkaDown6 = createPiece("white", "♟");
-sahmatDownElement.appendChild(peshkaDown6);
-const peshkaDown7 = createPiece("white", "♟");
-sahmatDownElement.appendChild(peshkaDown7);
-const peshkaDown8 = createPiece("white", "♟");
-sahmatDownElement.appendChild(peshkaDown8);
