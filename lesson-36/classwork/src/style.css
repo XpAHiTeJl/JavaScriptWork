@@ -105,22 +105,87 @@ button:focus-visible {
 
 
 
-
-
-
-
-.board div {
-  width: 50px;
-  height: 50px;
+body {
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  height: 100vh;
+  margin: 0;
 }
 
-.board {
-  border: 2px solid #111;
+.chessboard {
+  border: 2px solid #333;
   display: grid;
   grid-template-columns: repeat(8, 50px);
   grid-template-rows: repeat(8, 50px);
+  position: relative;
+}
+
+.chessboard div {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  position: relative;
+}
+
+.sahmat {
+  border: 2px solid #333;
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(2, 50px);
+  position: relative;
+}
+
+.sahmat div {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  position: relative;
+}
+
+.polebukvi {
+  border: 2px solid #333;
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  position: relative;
+}
+
+.polebukvi div {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  position: relative;
+}
+
+.white {
+  background-color: aliceblue;
+}
+
+.black {
+  background-color: darkmagenta;
+  color: #fff;
+}
+
+.piece {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  z-index: 1;
+  background-color: inherit;
+  color: black;
 }
