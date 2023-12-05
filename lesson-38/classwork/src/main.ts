@@ -4,6 +4,10 @@ const sahmatDownElement = document.getElementById("sahmatdown");
 const sahmatupElement = document.getElementById("sahmatup");
 const bukviPoleElement = document.getElementById("polebukvi");
 const numberssboku = document.querySelector(".numberssboku");
+
+const clsBtn = document.querySelector(".loader");
+const buttongame = document.querySelector(".buttongame");
+
 let selectedPiece = null;
 
 // Доска
@@ -44,6 +48,17 @@ for (let col = 0; col < 8; col++) {
   letterCell.innerHTML = `<span>${numbers[col]}</span>`;
   numberssboku.appendChild(letterCell);
 }
+let isAwait = true;
+
+buttongame?.addEventListener("click", () => {});
+
+new Promise((res, rej) => {
+  setTimeout(() => {
+    isAwait = true;
+    clsBtn.style.display = "none";
+    res(isAwait);
+  }, 7000);
+}).then(() => {});
 
 setTimeout(
   function () {

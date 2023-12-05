@@ -229,3 +229,36 @@ body {
   font-size: 18px;
   position: relative;
 }
+
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid red;
+  width: 220px;
+  height: 220px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 35%;
+  left: 45%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.buttongame {
+  width: 250px;
+  height: 50px;
+  background-color: #535bf2;
+  position: absolute;
+  top: 45%;
+  right: 20%;
+}
