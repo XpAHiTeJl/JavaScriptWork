@@ -25,6 +25,9 @@ for (let row = 0; row < 8; row++) {
       e.preventDefault();
       if (selectedPiece) {
         const targetCell = e.target;
+        while (targetCell.firstChild) {
+          targetCell.removeChild(targetCell.firstChild);
+        }
         targetCell.appendChild(selectedPiece);
       }
     });
