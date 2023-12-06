@@ -48,8 +48,7 @@ for (let col = 0; col < 8; col++) {
   letterCell.innerHTML = `<span>${numbers[col]}</span>`;
   numberssboku.appendChild(letterCell);
 }
-let isAwait = true;
-
+// Кнопка для старта
 buttongame.addEventListener("click", () => {
   clsBtn.style.display = "block";
 
