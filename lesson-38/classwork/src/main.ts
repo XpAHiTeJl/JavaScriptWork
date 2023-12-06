@@ -8,7 +8,7 @@ const numberssboku = document.querySelector(".numberssboku");
 const clsBtn = document.querySelector(".loader");
 const buttongame = document.querySelector(".buttongame");
 
-let selectedPiece = null;
+let selectedPiece = false;
 
 // Доска
 for (let row = 0; row < 8; row++) {
