@@ -106,7 +106,7 @@ buttongame.addEventListener("click", () => {
     )
   );
 });
-
+// Фигуры
 function king() {
   sahmatupElement.appendChild(createPiece("black", "♔"));
   sahmatDownElement.appendChild(createPiece("white", "♔"));
@@ -131,7 +131,7 @@ function peshki() {
   sahmatDownElement.appendChild(createPiece("white", "♟"));
   sahmatupElement.appendChild(createPiece("black", "♟"));
 }
-// Функция для создания фигур
+// Создание фигур
 function createPiece(color, type) {
   const piece = document.createElement("div");
   piece.className = `piece ${color}`;
