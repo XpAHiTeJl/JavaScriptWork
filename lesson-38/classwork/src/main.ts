@@ -28,7 +28,8 @@ for (let row = 0; row < 8; row++) {
         while (targetCell.firstChild) {
           targetCell.removeChild(targetCell.firstChild);
         }
-        targetCell.appendChild(selectedPiece);
+        targetCell.append(selectedPiece);
+        // targetCell.appendChild(selectedPiece);
       }
     });
 
