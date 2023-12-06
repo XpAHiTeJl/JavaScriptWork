@@ -50,61 +50,59 @@ for (let col = 0; col < 8; col++) {
 }
 let isAwait = true;
 
-buttongame?.addEventListener("click", () => {});
+buttongame.addEventListener("click", () => {
+  clsBtn.style.display = "block";
 
-new Promise((res, rej) => {
   setTimeout(() => {
-    isAwait = true;
     clsBtn.style.display = "none";
-    res(isAwait);
   }, 7000);
-}).then(() => {});
 
-setTimeout(
-  function () {
-    for (var i = 0; i < 8; i++) {
-      peshki(i);
-    }
-  },
-  6000,
   setTimeout(
     function () {
-      for (var i = 0; i < 2; i++) {
-        Slon(i);
+      for (var i = 0; i < 8; i++) {
+        peshki(i);
       }
     },
-    5000,
+    6000,
     setTimeout(
       function () {
         for (var i = 0; i < 2; i++) {
-          kon(i);
+          Slon(i);
         }
       },
-      4000,
+      5000,
       setTimeout(
         function () {
           for (var i = 0; i < 2; i++) {
-            ladiya(i);
+            kon(i);
           }
         },
-        3000,
+        4000,
         setTimeout(
           function () {
-            for (var i = 0; i < 1; i++) {
-              queen(i);
+            for (var i = 0; i < 2; i++) {
+              ladiya(i);
             }
           },
-          2000,
-          setTimeout(function () {
-            for (var i = 0; i < 1; i++) {
-              king(i);
-            }
-          }, 1000)
+          3000,
+          setTimeout(
+            function () {
+              for (var i = 0; i < 1; i++) {
+                queen(i);
+              }
+            },
+            2000,
+            setTimeout(function () {
+              for (var i = 0; i < 1; i++) {
+                king(i);
+              }
+            }, 1000)
+          )
         )
       )
     )
-  )
-);
+  );
+});
 
 function king() {
   sahmatupElement.appendChild(createPiece("black", "♔"));

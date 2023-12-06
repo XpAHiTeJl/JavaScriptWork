@@ -262,3 +262,7 @@ body {
   top: 45%;
   right: 20%;
 }
+
+.loader {
+  display: none;
+}
