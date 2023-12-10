@@ -1,0 +1,16 @@
+export const manufacturers = {
+  a: "Sony",
+  b: "Acer",
+  c: "Apple",
+  d: "Vestfrost",
+  e: "Indesit",
+  f: "Gorenje",
+  g: "Electrolux",
+  h: "Samsung",
+  i: "Toshiba",
+  j: "Philips",
+  k: "Bosch",
+  l: "Braun",
+  m: "Tefal",
+  n: "Delonghi",
+};
