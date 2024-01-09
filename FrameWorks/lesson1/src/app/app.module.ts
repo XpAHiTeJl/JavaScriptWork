@@ -7,6 +7,7 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { LogoComponent } from './header/logo/logo.component';
 import { PostComponent } from './main/post/post.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { PostComponent } from './main/post/post.component';
     LogoComponent,
     PostComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

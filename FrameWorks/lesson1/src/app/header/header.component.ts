@@ -8,5 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent {
   toggler: boolean = false;
+
+  todoList: string[] = [];
+  newTodo: string = '';
+
+  addTodo() {
+    if (this.newTodo.trim() !== '') {
+      this.todoList.push(this.newTodo.trim());
+      this.newTodo = '';
+    }
+  }
+
+  removeTodo(index: number) {
+    this.todoList.splice(index, 1);
+  }
+
   ngOnInit(): void {}
 }
