@@ -5,7 +5,7 @@
 
 .modalWindow-block {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 1px solid;
@@ -13,6 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2;
+    background-color: blueviolet;
 }
 
 .main-post-block {
@@ -22,11 +24,14 @@
 }
 
 .removeBTN {
-    margin-left: 50px;
+    float: right
 }
 
 .newBTNPost {
     margin-top: 15px;
+    position: absolute;
+    top: 2%;
+    left: 50%;
 }
 
 .addBTNPost {
@@ -35,4 +40,11 @@
 
 .newInput {
     width: 300px;
+}
+
+.newTEXTPost {
+    z-index: 1;
+    margin-top: 50px;
+    border: 1px solid;
+    width: 90%;
 }

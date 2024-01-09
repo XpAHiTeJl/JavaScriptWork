@@ -8,7 +8,7 @@
     </section>
 
 
-    <div *ngFor="let todo of todoList; let i = index">
+    <div class="newTEXTPost" *ngFor="let todo of todoList; let i = index">
         {{ todo }}
         <button (click)="removeTodo(i)" class="removeBTN">Remove</button>
     </div>
