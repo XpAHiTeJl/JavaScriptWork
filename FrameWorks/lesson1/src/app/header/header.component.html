@@ -1,11 +1,10 @@
 <div class="header-header">
     <app-logo></app-logo>
-    <button (click)="toggler = !toggler">New Post</button>
     <h2>Header</h2>
 </div>
 
 
-<section *ngIf="toggler" class="modalWindow-block">
+<!-- <section *ngIf="toggler" class="modalWindow-block">
     <p>Введите Текст</p>
     <input [(ngModel)]="newTodo" type="text" placeholder="Введите текст поста">
     <button (click)="addTodo()">Добавить пост</button>
@@ -15,4 +14,4 @@
 <div *ngFor="let todo of todoList; let i = index">
     {{ todo }}
     <button (click)="removeTodo(i)">Remove</button>
-</div>
+</div> -->

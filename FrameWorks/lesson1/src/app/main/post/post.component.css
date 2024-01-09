@@ -2,3 +2,22 @@
     font-size: 50px;
     text-align: center;
 }
+
+.modalWindow-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid;
+    padding: 50px;
+}
+
+.main-post-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.removeBTN {
+    margin-left: 50px;
+}
