@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  public isVisible = false;
+  public isDisabled = false;
+
+  public setVisibility() {
+    this.isVisible = !this.isVisible;
+    this.isDisabled = true;
+  }
 
   ngOnInit(): void {}
 
-  ButtonClick() {
-    console.log('Кнопка была нажата!');
-  }
+  ButtonClick() {}
 }
