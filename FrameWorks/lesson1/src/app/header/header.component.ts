@@ -6,16 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
-  public isVisible = false;
-  public isDisabled = false;
-
-  public setVisibility() {
-    this.isVisible = !this.isVisible;
-    this.isDisabled = true;
-  }
-
+export class HeaderComponent {
+  toggler: boolean = false;
   ngOnInit(): void {}
-
-  ButtonClick() {}
 }

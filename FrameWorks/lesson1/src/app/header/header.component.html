@@ -1,12 +1,15 @@
 <div class="header-header">
     <app-logo></app-logo>
-    <button (click)="ButtonClick()">New Post</button>
+    <button (click)="toggler = !toggler">New Post</button>
     <h2>Header</h2>
+
+
 </div>
 
 
-<div class="modalWindow-block">
+
+<section *ngIf="toggler" class="modalWindow-block">
     <p>Введите Текст</p>
     <input type="text" placeholder="Введите текст поста">
     <button>Добавить пост</button>
-</div>
+</section>
