@@ -10,6 +10,9 @@
     transform: translate(-50%, -50%);
     border: 1px solid;
     padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-post-block {
@@ -20,4 +23,16 @@
 
 .removeBTN {
     margin-left: 50px;
+}
+
+.newBTNPost {
+    margin-top: 15px;
+}
+
+.addBTNPost {
+    margin-top: 30px;
+}
+
+.newInput {
+    width: 300px;
 }

@@ -1,12 +1,10 @@
 <div class="main-post-block">
-    <!-- <p class="main-text">PostWorks</p>
-    <p class="main-text">PostWorks</p> -->
-    <button (click)="toggler = !toggler">New Post</button>
+
+    <button (click)="toggler = !toggler" class="newBTNPost">New Post</button>
 
     <section *ngIf="toggler" class="modalWindow-block">
-        <p>Введите Текст</p>
-        <input [(ngModel)]="newTodo" type="text" placeholder="Введите текст поста">
-        <button (click)="addTodo()">Добавить пост</button>
+        <input [(ngModel)]="newTodo" type="text" placeholder="Введите текст поста" class="newInput">
+        <button (click)="addTodo()" class="addBTNPost">Добавить пост</button>
     </section>
 
 
