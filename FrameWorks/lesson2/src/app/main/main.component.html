@@ -1,0 +1,12 @@
+<button (click)="toggler = !toggler" class="loginBTN">New accounte</button>
+
+<section *ngIf="toggler" class="modalWindow-block">
+    <input [(ngModel)]="newTodo" type="text" placeholder="Введите логин">
+    <button (click)="addTodo()">Добавить пользователя</button>
+    <button *ngIf="togglerExit" (click)="toggler = !toggler">закрыть окно</button>
+</section>
+
+<div *ngFor="let todo of todoList; let i = index">
+    {{ todo }}
+    <button (click)="removeTodo(i)">Remove</button>
+</div>
