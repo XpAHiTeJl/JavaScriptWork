@@ -1,0 +1,8 @@
+app-header {
+  display: flex;
+  height: 100px;
+}
+
+app-main {
+  display: flex;
+}
