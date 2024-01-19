@@ -53,3 +53,9 @@
 .textareamessages {
   background-color: antiquewhite;
 }
+
+.privatemessages {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}

@@ -7,16 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   toggler: boolean = false;
+  togglerMessage: boolean = false;
   togglerExit: boolean = false;
   textareaVisible: boolean = false;
+  textmessageVisible: boolean = false;
+  isFocused: boolean = false;
 
   todoList: string[] = [];
   newTodo: string = '';
   textareaValue: string = '';
   messages: string[] = [];
   newMessage: string = '';
-
-  isFocused: boolean = false;
+  newMessagePrivat: string = '';
 
   onFocus() {
     this.isFocused = true;
@@ -36,6 +38,9 @@ export class MainComponent implements OnInit {
   toggleTextarea() {
     this.textareaVisible = !this.textareaVisible;
   }
+  toogleMessages() {
+    this.textmessageVisible = !this.textmessageVisible;
+  }
 
   addTodo() {
     if (this.newTodo.trim() !== '') {
@@ -49,6 +54,5 @@ export class MainComponent implements OnInit {
     this.todoList.splice(index, 1);
   }
 
-  genders = ['male', 'female', 'others'];
   ngOnInit(): void {}
 }

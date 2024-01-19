@@ -18,24 +18,28 @@
 
   <div class="mainBTN">
     <button>Add to Friend</button>
-    <button>Send message</button>
+    <button (click)="toogleMessages()">Send message</button>
     <button (click)="toggleTextarea()">Chat</button>
-
-    <mat-card *ngIf="textareaVisible" [(ngModel)]="textareaValue" class="chatMassahes">
-      <mat-card-title>Чат</mat-card-title>
-      <div class="chat-messages" *ngFor="let message of messages">
-        {{ message }}
-      </div>
-      <mat-form-field>
-        <textarea matInput [(ngModel)]="newMessage"
-          [placeholder]="isFocused || newMessage.trim() ? '' : 'Введите сообщение...'" (focus)="onFocus()"
-          (blur)="onBlur()" class="textareamessages"></textarea>
-      </mat-form-field>
-      <button mat-raised-button color="primary" (click)="sendMessage()">Отправить</button>
-    </mat-card>
-
-
     <button (click)="removeTodo(i)">Exit</button>
   </div>
-
 </div>
+
+
+<div *ngIf="textmessageVisible" class="privatemessages">
+  <input type="text" [placeholder]="isFocused || newMessagePrivat.trim() ? '' : 'Введите сообщение...'"
+    (focus)="onFocus()" (blur)="onBlur()">
+  <button (click)="toogleMessages()">Отправить</button>
+</div>
+
+<mat-card *ngIf="textareaVisible" [(ngModel)]="textareaValue" class="chatMassahes">
+  <mat-card-title>Чат</mat-card-title>
+  <div class="chat-messages" *ngFor="let message of messages">
+    {{ message }}
+  </div>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="newMessage"
+      [placeholder]="isFocused || newMessage.trim() ? '' : 'Введите сообщение...'" (focus)="onFocus()" (blur)="onBlur()"
+      class="textareamessages"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="sendMessage()">Отправить</button>
+</mat-card>
