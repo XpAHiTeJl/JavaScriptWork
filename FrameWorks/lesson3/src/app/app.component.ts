@@ -7,7 +7,6 @@ import { TaskService } from './task.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'angular-todolist';
   newTask = '';
 
   constructor(private taskService: TaskService) {}

@@ -7,12 +7,7 @@ import { task } from './interaface/interface';
 export class TaskService {
   task: task = { title: '', createdOn: new Date() };
 
-  tasks: task[] = [
-    {
-      title: '',
-      createdOn: new Date(),
-    },
-  ];
+  tasks: task[] = [];
 
   getTask(): task {
     return this.task;
