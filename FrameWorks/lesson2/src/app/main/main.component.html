@@ -29,8 +29,9 @@
         {{ message }}
       </div>
       <mat-form-field>
-        <textarea matInput [(ngModel)]="newMessage" placeholder="{{placeholderText}}" (focus)="onFocus()"
-          (blur)="onBlur()"></textarea>
+        <textarea matInput [(ngModel)]="newMessage"
+          [placeholder]="isFocused || newMessage.trim() ? '' : 'Введите сообщение...'" (focus)="onFocus()"
+          (blur)="onBlur()" class="textareamessages"></textarea>
       </mat-form-field>
       <button mat-raised-button color="primary" (click)="sendMessage()">Отправить</button>
     </mat-card>

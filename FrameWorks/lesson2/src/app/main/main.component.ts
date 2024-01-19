@@ -17,16 +17,13 @@ export class MainComponent implements OnInit {
   newMessage: string = '';
 
   isFocused: boolean = false;
-  placeholderText: string = 'Введите сообщение...';
 
   onFocus() {
     this.isFocused = true;
-    this.placeholderText = '';
   }
 
   onBlur() {
     this.isFocused = false;
-    this.placeholderText = 'Введите сообщение...';
   }
 
   sendMessage() {

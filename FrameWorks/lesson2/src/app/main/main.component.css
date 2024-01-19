@@ -41,8 +41,15 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  background-color: aliceblue;
+
 }
 
 .chat-messages {
   margin-bottom: 30px;
+  background-color: rgb(230, 230, 98);
+}
+
+.textareamessages {
+  background-color: antiquewhite;
 }
