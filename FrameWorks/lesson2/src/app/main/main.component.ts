@@ -8,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
   toggler: boolean = false;
   togglerExit: boolean = false;
+  textareaVisible: boolean = false;
 
   todoList: string[] = [];
   newTodo: string = '';
+  textareaValue: string = '';
+  messages: string[] = [];
+  newMessage: string = '';
+
+  isFocused: boolean = false;
+  placeholderText: string = 'Введите сообщение...';
+
+  onFocus() {
+    this.isFocused = true;
+    this.placeholderText = '';
+  }
+
+  onBlur() {
+    this.isFocused = false;
+    this.placeholderText = 'Введите сообщение...';
+  }
+
+  sendMessage() {
+    if (this.newMessage.trim() !== '') {
+      this.messages.push(this.newMessage);
+      this.newMessage = '';
+    }
+  }
+
+  toggleTextarea() {
+    this.textareaVisible = !this.textareaVisible;
+  }
 
   addTodo() {
     if (this.newTodo.trim() !== '') {
@@ -23,5 +51,7 @@ export class MainComponent implements OnInit {
   removeTodo(index: number) {
     this.todoList.splice(index, 1);
   }
+
+  genders = ['male', 'female', 'others'];
   ngOnInit(): void {}
 }

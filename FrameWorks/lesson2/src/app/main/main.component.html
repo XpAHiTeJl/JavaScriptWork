@@ -1,12 +1,45 @@
-<button (click)="toggler = !toggler" class="loginBTN">New accounte</button>
+<div class="loginBTN">
+  <button (click)="toggler = !toggler">New accounte</button>
+
+</div>
+
 
 <section *ngIf="toggler" class="modalWindow-block">
-    <input [(ngModel)]="newTodo" type="text" placeholder="Введите логин">
-    <button (click)="addTodo()">Добавить пользователя</button>
-    <button *ngIf="togglerExit" (click)="toggler = !toggler">закрыть окно</button>
+  <input [(ngModel)]="newTodo" type="text" placeholder="Введите логин">
+  <button (click)="addTodo()">Добавить пользователя</button>
+  <button *ngIf="togglerExit" (click)="toggler = !toggler">закрыть окно</button>
 </section>
 
-<div *ngFor="let todo of todoList; let i = index">
+
+<div *ngFor="let todo of todoList; let i = index" class="mainPerson">
+  <div class="mainNameImg">
+    <img src="#" alt="img">
     {{ todo }}
-    <button (click)="removeTodo(i)">Remove</button>
+  </div>
+
+
+  <div class="mainBTN">
+    <button>Add to Friend</button>
+    <button>Send message</button>
+    <button (click)="toggleTextarea()">Chat</button>
+
+    <mat-card *ngIf="textareaVisible" [(ngModel)]="textareaValue" class="chatMassahes">
+      <mat-card-title>Чат</mat-card-title>
+      <div class="chat-messages" *ngFor="let message of messages">
+        {{ message }}
+      </div>
+      <mat-form-field>
+        <textarea matInput [(ngModel)]="newMessage" placeholder="{{placeholderText}}" (focus)="onFocus()"
+          (blur)="onBlur()"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="sendMessage()">Отправить</button>
+    </mat-card>
+
+
+    <button (click)="removeTodo(i)">Exit</button>
+  </div>
+
+
+
+
 </div>
