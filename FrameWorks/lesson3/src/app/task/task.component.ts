@@ -11,13 +11,25 @@ export class TaskComponent {
   index: number = 0;
   title: string = '';
 
+  editing = false;
+  editedTitle = '';
+
   task = this.taskservice.getTask();
   constructor(public taskservice: TaskService) {}
 
-  editTask() {
-    this.taskservice.editTask(this.index, this.title);
-  }
   deleteTask() {
-    this.taskservice.deleteTask(this.index);
+    this.taskservice.deleteTask(this.task);
+  }
+
+  editTask() {
+    this.editing = true;
+    this.editedTitle = this.task.title;
+  }
+
+  saveTask() {
+    if (this.editedTitle.trim() !== '') {
+      this.task.title = this.editedTitle;
+      this.editing = false;
+    }
   }
 }

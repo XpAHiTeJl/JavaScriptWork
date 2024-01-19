@@ -1,6 +1,8 @@
 <div class="task">
-  <span>{{ task.title }}</span>
+  <span *ngIf="!editing">{{ task.title }}</span>
+  <input *ngIf="editing" [(ngModel)]="editedTitle" />
   <p>Added on: {{ task.createdOn | date:'medium' }}</p>
-  <button (click)="editTask()">Edit</button>
+  <button *ngIf="!editing" (click)="editTask()">Edit</button>
+  <button *ngIf="editing" (click)="saveTask()">Save</button>
   <button (click)="deleteTask()">Delete</button>
 </div>
