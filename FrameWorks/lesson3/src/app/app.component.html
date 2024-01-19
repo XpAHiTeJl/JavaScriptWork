@@ -1,1 +1,9 @@
-<app-post></app-post>
+<div>
+  <h1>Todo List</h1>
+  <input [(ngModel)]="newTask" placeholder="New task" />
+  <button (click)="addTask()">Add Task</button>
+
+  <div *ngFor="let task of getTasks(); let i = index">
+    <app-task [task]="task"></app-task>
+  </div>
+</div>

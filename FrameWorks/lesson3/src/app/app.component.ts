@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ServiceService } from './service.service';
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,19 @@ import { ServiceService } from './service.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'lesson3';
+  title = 'angular-todolist';
+  newTask = '';
 
-  constructor() {}
+  constructor(private taskService: TaskService) {}
+
+  addTask() {
+    if (this.newTask.trim() !== '') {
+      this.taskService.addTask(this.newTask);
+      this.newTask = '';
+    }
+  }
+
+  getTasks() {
+    return this.taskService.getTasks();
+  }
 }

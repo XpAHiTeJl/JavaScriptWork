@@ -1,0 +1,6 @@
+<div class="task">
+  <span>{{ task.title }}</span>
+  <p>Added on: {{ task.createdOn | date:'medium' }}</p>
+  <button (click)="editTask()">Edit</button>
+  <button (click)="deleteTask()">Delete</button>
+</div>
