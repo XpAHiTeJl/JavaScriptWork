@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
-
+import { task } from './interaface/interface';
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  tasks = [];
+  tasks: task[] = [
+    {
+      title: '',
+      createdOn: new Date(),
+    },
+  ];
 
   addTask(title: string) {
     const task = {
@@ -19,6 +24,8 @@ export class TaskService {
   }
 
   editTask(index: number, title: string) {
+    const foundindex = this.tasks.findIndex((t) => t.title === title);
+
     this.tasks[index].title = title;
   }
 
@@ -26,3 +33,16 @@ export class TaskService {
     this.tasks.splice(index, 1);
   }
 }
+
+// public editTodo(
+// todoId: number,
+//     editedTodoDesc: string,
+//     editedTodoStatus: any
+//   ) {
+//     const foundIndex = this.todoList.findIndex((t) => t.id === todoId);
+
+//     if (foundIndex !== -1) {
+//       this.todoList[foundIndex].description = editedTodoDesc;
+//       this.todoList[foundIndex].status = editedTodoStatus;
+//     }
+//   }

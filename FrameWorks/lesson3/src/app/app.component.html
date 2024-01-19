@@ -4,6 +4,6 @@
   <button (click)="addTask()">Add Task</button>
 
   <div *ngFor="let task of getTasks(); let i = index">
-    <app-task [task]="task"></app-task>
+    <app-task>{{task.title}}</app-task>
   </div>
 </div>

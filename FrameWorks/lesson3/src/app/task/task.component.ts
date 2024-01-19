@@ -1,5 +1,5 @@
+import { TaskService } from './../task.service';
 import { Component, Input } from '@angular/core';
-import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task',
@@ -7,5 +7,14 @@ import { TaskService } from '../task.service';
   styleUrls: ['./task.component.css'],
 })
 export class TaskComponent {
-  @Input() task: any;
+  task: any;
+
+  index: number = 0;
+  title: string = '';
+
+  constructor(public taskservice: TaskService) {}
+  editTask() {
+    this.taskservice.editTask(this.index, this.title);
+  }
+  deleteTask() {}
 }
