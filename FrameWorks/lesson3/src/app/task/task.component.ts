@@ -8,9 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./task.component.css'],
 })
 export class TaskComponent {
-  index: number = 0;
-  title: string = '';
-
   editing = false;
   editedTitle = '';
 
