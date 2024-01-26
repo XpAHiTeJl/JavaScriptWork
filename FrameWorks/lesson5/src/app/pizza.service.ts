@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IProduct } from './interfaces/Iproduct';
+import { IProduct } from './interfaces/IProduct';
 import { Product } from './classes';
 
 @Injectable({
@@ -20,16 +20,6 @@ export class PizzaService {
 
   public addPizza(obj: IProduct) {
     this.pizza.push(obj);
-  }
-
-  public updatePizza(obj: IProduct, label: string) {
-    const searchedPizza = this.pizza.find((el) => el.getLabel() === label);
-
-    for (const key in obj) {
-      if (searchedPizza[key] !== obj[key]) {
-        searchedPizza[key] = obj[key];
-      }
-    }
   }
 
   public removePizza(label: string) {

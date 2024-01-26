@@ -10,10 +10,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-app-root {
-  display: flex;
-  flex-direction: column;
-}
 
 app-taco,
 app-pizza,

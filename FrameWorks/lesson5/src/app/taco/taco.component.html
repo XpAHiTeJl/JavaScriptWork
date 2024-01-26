@@ -1,1 +1,8 @@
-<p>taco works!</p>
+<section>
+  <div *ngFor="let taco of tacos">
+    <h3>{{ taco.label }}</h3>
+    <h4>{{ taco.price }}</h4>
+
+    <button>Buy!</button>
+  </div>
+</section>

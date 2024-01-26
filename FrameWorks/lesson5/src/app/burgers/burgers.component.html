@@ -1,1 +1,13 @@
-<p>burgers works!</p>
+<section>
+  <div *ngFor="let burger of burgers">
+    <div>
+
+      <!-- <img src={{burgers.img}} alt=""> -->
+      <h3>{{ burger.label }}</h3>
+      <h4>{{ burger.price }}</h4>
+    </div>
+
+
+    <button>Buy!</button>
+  </div>
+</section>

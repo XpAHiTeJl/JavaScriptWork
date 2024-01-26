@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IProduct } from './interfaces/Iproduct';
+import { IProduct } from './interfaces/IProduct';
+
 import { Product } from './classes';
 
 @Injectable({
@@ -20,16 +21,6 @@ export class TacoService {
 
   public addTaco(obj: IProduct) {
     this.tacos.push(obj);
-  }
-
-  public updateTaco(obj: IProduct, label: string) {
-    const searchedTacos = this.tacos.find((el) => el.getLabel() === label);
-
-    for (const key in obj) {
-      if (searchedTacos[key] !== obj[key]) {
-        searchedTacos[key] = obj[key];
-      }
-    }
   }
 
   public removeTaco(label: string) {
