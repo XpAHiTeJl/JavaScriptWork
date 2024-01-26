@@ -7,9 +7,9 @@ import { IProduct } from './interfaces/IProduct';
 })
 export class BugrersService {
   private burgers: IProduct[] = [
-    new Product('UaBurger', 100, './../assets/UuBurger.jpg'),
-    new Product('KingDonate', 150, './../assets/kingBurger.png'),
-    new Product('LowBurger', 70, './../assets/lowBurger.jpg'),
+    new Product('UaBurger', 100, './../assets/UuBurger.jpg', 1),
+    new Product('KingDonate', 150, './../assets/kingBurger.png', 2),
+    new Product('LowBurger', 70, './../assets/lowBurger.jpg', 3),
   ];
 
   constructor() {}

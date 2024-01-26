@@ -8,16 +8,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public categories = [
     {
-      title: 'Burgers',
-      path: '/burgers',
+      title: 'Get All',
+      path: 'products',
     },
+
+    {
+      title: 'Burgers',
+      path: 'products/burgers',
+    },
+
     {
       title: 'Pizza',
-      path: '/pizza',
+      path: 'products/pizza',
     },
     {
       title: 'Tacos',
-      path: '/tacos',
+      path: 'products/tacos',
     },
   ];
 }

@@ -8,9 +8,10 @@ import { TacoComponent } from './taco/taco.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { FullitemComponent } from './fullitem/fullitem.component';
 
 @NgModule({
-  declarations: [AppComponent, PizzaComponent, BurgersComponent, TacoComponent],
+  declarations: [AppComponent, PizzaComponent, BurgersComponent, TacoComponent, FullitemComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

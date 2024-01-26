@@ -3,18 +3,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { BurgersComponent } from './burgers/burgers.component';
 import { PizzaComponent } from './pizza/pizza.component';
 import { TacoComponent } from './taco/taco.component';
+import { FullitemComponent } from './fullitem/fullitem.component';
 
 const routes: Routes = [
   {
-    path: 'burgers',
+    path: 'products',
+    component: FullitemComponent,
+  },
+  {
+    path: 'products/burgers',
     component: BurgersComponent,
   },
   {
-    path: 'pizza',
+    path: 'products/pizza',
     component: PizzaComponent,
   },
+
   {
-    path: 'tacos',
+    path: 'products/tacos',
     component: TacoComponent,
   },
 ];

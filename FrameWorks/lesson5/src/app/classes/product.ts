@@ -4,11 +4,13 @@ export class Product implements IProduct {
   constructor(
     private label: string,
     private price: number,
-    private img: string
+    private img: string,
+    private id: number
   ) {
     this.label = label;
     this.price = price;
     this.img = img;
+    this.id = id;
   }
 
   getLabel() {
@@ -20,5 +22,8 @@ export class Product implements IProduct {
   }
   getImg() {
     return this.img;
+  }
+  getId() {
+    return this.id;
   }
 }
