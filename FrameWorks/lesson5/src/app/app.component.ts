@@ -14,16 +14,16 @@ export class AppComponent {
 
     {
       title: 'Burgers',
-      path: 'products/burgers',
+      path: 'products/burgers/',
     },
 
     {
       title: 'Pizza',
-      path: 'products/pizza',
+      path: 'products/pizza/',
     },
     {
       title: 'Tacos',
-      path: 'products/tacos',
+      path: 'products/tacos/',
     },
   ];
 }

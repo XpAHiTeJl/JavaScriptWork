@@ -15,12 +15,24 @@ const routes: Routes = [
     component: BurgersComponent,
   },
   {
+    path: 'products/burgers/:id',
+    component: BurgersComponent,
+  },
+  {
     path: 'products/pizza',
+    component: PizzaComponent,
+  },
+  {
+    path: 'products/pizza/:id',
     component: PizzaComponent,
   },
 
   {
     path: 'products/tacos',
+    component: TacoComponent,
+  },
+  {
+    path: 'products/tacos/:id',
     component: TacoComponent,
   },
 ];
