@@ -8,7 +8,6 @@ import { BugrersService } from '../bugrers.service';
 })
 export class BurgersComponent {
   public burgers: any[];
-  id: any;
 
   constructor(public burgersService: BugrersService) {
     this.burgers = this.getAllBurgers();
