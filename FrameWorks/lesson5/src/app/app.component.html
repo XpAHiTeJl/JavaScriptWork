@@ -1,0 +1,18 @@
+<header>
+  <nav>
+    <a *ngFor="let catrgory of categories" [routerLink]="catrgory.path">
+      <button>{{catrgory.title}}</button></a>
+  </nav>
+</header>
+
+
+<main>
+
+  <router-outlet>
+  </router-outlet>
+</main>
+
+
+<footer>
+  <h3>All rights reserved(c) 2024</h3>
+</footer>
