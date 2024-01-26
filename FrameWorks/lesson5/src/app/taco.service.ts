@@ -8,9 +8,9 @@ import { Product } from './classes';
 })
 export class TacoService {
   private tacos: IProduct[] = [
-    new Product('UaTaco', 110),
-    new Product('KingDonate', 95),
-    new Product('LowTaco', 40),
+    new Product('UaTaco', 110, './../assets/uaTaco.jpg'),
+    new Product('KingDonate', 95, './../assets/kingTaco.jpg'),
+    new Product('LowTaco', 40, './../assets/lowTaco.jpg'),
   ];
 
   constructor() {}

@@ -7,9 +7,9 @@ import { Product } from './classes';
 })
 export class PizzaService {
   private pizza: IProduct[] = [
-    new Product('UaPizza', 150),
-    new Product('KingDonate', 250),
-    new Product('LowPizza', 120),
+    new Product('UaPizza', 150, './../assets/uaPizza.jpg'),
+    new Product('KingDonate', 250, './../assets/kingPizza.jpg'),
+    new Product('LowPizza', 120, './../assets/lowPizza.jpg'),
   ];
 
   constructor() {}

@@ -3,12 +3,12 @@ import { IProduct } from '../interfaces/IProduct';
 export class Product implements IProduct {
   constructor(
     private label: string,
-    private price: number
-  ) // private img: string
-  {
+    private price: number,
+    private img: string
+  ) {
     this.label = label;
     this.price = price;
-    // this.img = img;
+    this.img = img;
   }
 
   getLabel() {
@@ -18,7 +18,7 @@ export class Product implements IProduct {
   getPrice() {
     return this.price;
   }
-  // getImg() {
-  //   return this.img;
-  // }
+  getImg() {
+    return this.img;
+  }
 }
