@@ -17,6 +17,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 
 import { MatNativeDateModule, NativeDateAdapter } from '@angular/material/core';
 
@@ -37,6 +38,7 @@ import { MatNativeDateModule, NativeDateAdapter } from '@angular/material/core';
     MatCardModule,
     MatRadioModule,
     MatInputModule,
+    MatButtonModule,
     MatSelectModule,
   ],
   providers: [NativeDateAdapter],

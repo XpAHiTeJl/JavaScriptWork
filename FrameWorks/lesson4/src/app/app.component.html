@@ -1,15 +1,35 @@
-<mat-form-field>
-  <mat-label>Input</mat-label>
-  <input matInput>
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Select</mat-label>
-  <mat-select>
-    <mat-option value="one">First option</mat-option>
-    <mat-option value="two">Second option</mat-option>
-  </mat-select>
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Textarea</mat-label>
-  <textarea matInput></textarea>
-</mat-form-field>
+<div class="main">
+  <div class="left-main">
+    <mat-form-field>
+      <mat-label>Тема</mat-label>
+      <input matInput [(ngModel)]="inputText">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>День недели</mat-label>
+      <mat-select [(value)]="selectedValue">
+        <mat-option value="one">Понедельник</mat-option>
+        <mat-option value="two">Вторник</mat-option>
+        <mat-option value="three">Среда</mat-option>
+        <mat-option value="fq1w">Четверг</mat-option>
+        <mat-option value="fq2w">Пятница</mat-option>
+        <mat-option value="fq3w">Суббота</mat-option>
+        <mat-option value="fq4w">Воскресенье</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Текст</mat-label>
+      <textarea matInput [(ngModel)]="inputTextarear"></textarea>
+    </mat-form-field>
+    <button mat-raised-button (click)="onButtonClick()">Text area</button>
+  </div>
+
+  <div class="right-main">
+    <div *ngFor="let todo of todoList; let i = index">
+      <div>
+        {{ todo }}
+
+      </div>
+      <button (click)="removeTodo(i)">Exit</button>
+
+    </div>
+  </div>
