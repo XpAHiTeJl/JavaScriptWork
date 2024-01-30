@@ -4,7 +4,12 @@
 }
 
 .left-main {
-}
-.right-main {
   display: flex;
+  flex-direction: column;
+  .mat-checkbox {
+    margin-top: 10px;
+  }
+  button {
+    margin-top: 50px;
+  }
 }

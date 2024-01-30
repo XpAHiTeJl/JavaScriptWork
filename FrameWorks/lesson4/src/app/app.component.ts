@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,19 +6,35 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  checked = false;
+  indeterminate = false;
+
   inputText: string = '';
   selectedValue: string = '';
   inputTextarear: string = '';
 
   todoList: string[] = [];
+  todoListValue: string[] = [];
+  todoListTextarear: string[] = [];
 
   onButtonClick() {
     this.todoList.push(this.inputText);
-    this.todoList.push(this.selectedValue);
-    this.todoList.push(this.inputTextarear);
+    this.todoListValue.push(this.selectedValue);
+    this.todoListTextarear.push(this.inputTextarear);
     this.selectedValue = '';
     this.inputText = '';
     this.inputTextarear = '';
+
+    if (this.checked === false) {
+      this.indeterminate = true;
+    }
+  }
+
+  onSubmitHandler(data: any) {
+    console.log(data);
+    if (data.checked) {
+      console.log('qwedasdfa');
+    }
   }
 
   removeTodo(index: number) {

@@ -1,4 +1,4 @@
-<div class="main">
+<!-- <div class="main">
   <div class="left-main">
     <mat-form-field>
       <mat-label>Тема</mat-label>
@@ -7,29 +7,58 @@
     <mat-form-field>
       <mat-label>День недели</mat-label>
       <mat-select [(value)]="selectedValue">
-        <mat-option value="one">Понедельник</mat-option>
-        <mat-option value="two">Вторник</mat-option>
-        <mat-option value="three">Среда</mat-option>
-        <mat-option value="fq1w">Четверг</mat-option>
-        <mat-option value="fq2w">Пятница</mat-option>
-        <mat-option value="fq3w">Суббота</mat-option>
-        <mat-option value="fq4w">Воскресенье</mat-option>
+        <mat-option value="Понедельник">Понедельник</mat-option>
+        <mat-option value="Вторник">Вторник</mat-option>
+        <mat-option value="Среда">Среда</mat-option>
+        <mat-option value="Четверг">Четверг</mat-option>
+        <mat-option value="Пятница">Пятница</mat-option>
+        <mat-option value="Суббота">Суббота</mat-option>
+        <mat-option value="Воскресенье">Воскресенье</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Текст</mat-label>
       <textarea matInput [(ngModel)]="inputTextarear"></textarea>
     </mat-form-field>
+    <mat-checkbox [(ngModel)]="checked">Продуктивный </mat-checkbox>
+    <mat-checkbox [(ngModel)]="indeterminate">Не продуктивный </mat-checkbox>
     <button mat-raised-button (click)="onButtonClick()">Text area</button>
   </div>
 
   <div class="right-main">
-    <div *ngFor="let todo of todoList; let i = index">
-      <div>
-        {{ todo }}
-
+    <span class="right-list" *ngFor="let todo of todoList; let i = index">
+      <div class="right-list-todo">
+        <p>{{ todo }}</p>
+        <p>{{ todoListValue }}</p>
+        <p>{{ todoListTextarear }}</p>
       </div>
-      <button (click)="removeTodo(i)">Exit</button>
 
-    </div>
+
+      <mat-checkbox [(ngModel)]="checked" [(indeterminate)]="indeterminate"></mat-checkbox>
+    </span>
   </div>
+ -->
+
+
+
+
+<form class="form" #form="ngForm" (submit)="onSubmitHandler(form.value)">
+  <mat-form-field class="input-field">
+    <mat-label>Title</mat-label>
+    <input name="title" matInput ngModel placeholder="Title" value="" class="input" />
+  </mat-form-field>
+
+  <mat-select name="formselect" ngModel value="Выбери">
+    <mat-option value="Понедельник">Понедельник</mat-option>
+    <mat-option value="Вторник">Вторник</mat-option>
+    <mat-option value="Среда">Среда</mat-option>
+    <mat-option value="Четверг">Четверг</mat-option>
+    <mat-option value="Пятница">Пятница</mat-option>
+    <mat-option value="Суббота">Суббота</mat-option>
+    <mat-option value="Воскресенье">Воскресенье</mat-option>
+  </mat-select>
+  <mat-checkbox name="checked" ngModel>Продуктивный </mat-checkbox>
+
+
+  <button mat-raised-button color="warn">Add</button>
+</form>
