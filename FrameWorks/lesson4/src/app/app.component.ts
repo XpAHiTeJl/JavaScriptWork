@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PostService } from '../app/services/post.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  constructor(private postService: PostService) {}
   checked = false;
   indeterminate = false;
 
@@ -24,17 +26,11 @@ export class AppComponent {
     this.selectedValue = '';
     this.inputText = '';
     this.inputTextarear = '';
-
-    if (this.checked === false) {
-      this.indeterminate = true;
-    }
   }
 
   onSubmitHandler(data: any) {
-    console.log(data);
-    if (data.checked) {
-      console.log('qwedasdfa');
-    }
+    this.postService.add(data.title, data.formselect, data.description);
+    console.log();
   }
 
   removeTodo(index: number) {
