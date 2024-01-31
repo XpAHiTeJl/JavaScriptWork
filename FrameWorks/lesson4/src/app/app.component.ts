@@ -18,6 +18,7 @@ export class AppComponent {
     return this.postService.getAll();
   }
   update(post: IPost) {
-    this.postService.update(post);
+    // todo открытие модального окна, по килку кнопки  апдейт в модальном окне будет вызываться postservice.update и будут передаваться новые значениея полей и post
   }
 }
+// this.postService.update(post);
