@@ -43,14 +43,20 @@
 
 
 <form class="form" #form="ngForm" (submit)="onSubmitHandler(form.value)">
-  <mat-form-field class="input-field">
+  <mat-form-field class="input-title">
     <mat-label>Title</mat-label>
     <input name="title" matInput ngModel placeholder="Title" value="" class="input" />
+
+  </mat-form-field>
+
+
+  <mat-form-field class="input-description">
     <mat-label>Description</mat-label>
     <input name="description" matInput ngModel placeholder="Title" value="" class="input" />
   </mat-form-field>
 
-  <mat-select name="formselect" ngModel value="Выбери">
+
+  <mat-select name="formselect" ngModel placeholder="Выбери день">
     <mat-option value="Понедельник">Понедельник</mat-option>
     <mat-option value="Вторник">Вторник</mat-option>
     <mat-option value="Среда">Среда</mat-option>
@@ -65,5 +71,10 @@
   <mat-checkbox name="checked" ngModel>Продуктивный </mat-checkbox>
 
   <button mat-raised-button color="warn">Add</button>
+
+
+  <div>
+    {{getTitle()}}
+  </div>
 
 </form>

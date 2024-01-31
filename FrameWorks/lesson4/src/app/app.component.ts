@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostService } from '../app/services/post.service';
+import { IPost } from './interfaces';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,10 @@ export class AppComponent {
 
   onSubmitHandler(data: any) {
     this.postService.add(data.title, data.formselect, data.description);
-    console.log();
+    console.log(this.getPosts());
+  }
+  getPosts() {
+    return this.postService.getAll();
   }
 
   removeTodo(index: number) {
