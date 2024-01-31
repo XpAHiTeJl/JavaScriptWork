@@ -4,12 +4,17 @@ export class Post implements IPost {
   private title: string;
   private value: string;
   private description: string;
+  private id: number;
 
-  constructor(title: string, value: string, description: string) {
+  constructor(title: string, value: string, description: string, id: number) {
     this.title = title;
     this.value = value;
     this.description = description;
+    this.id = id;
   }
+  getId = (): number => {
+    return this.id;
+  };
 
   getTitle = (): string => {
     return this.title;
