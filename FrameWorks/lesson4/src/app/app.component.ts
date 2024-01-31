@@ -15,8 +15,6 @@ export class AppComponent {
     console.log(this.getPosts());
   }
   getPosts() {
-    // console.log(this.postService.getAll());
-
     return this.postService.getAll();
   }
   update(post: IPost) {

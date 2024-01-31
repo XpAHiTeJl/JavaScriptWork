@@ -69,7 +69,7 @@
   <button mat-raised-button color="warn">Add</button>
 </form>
 <div class="right-list" *ngFor="let post of getPosts(); let i = index">
-  {{i+1}}
+  {{i}}
   {{ post.getTitle() }}
   {{ post.getValue() }}
   {{ post.getDescription() }}
