@@ -74,6 +74,8 @@
   {{ post.getValue() }}
   {{ post.getDescription() }}
 
-  <button (click)="update(post)">Edit</button>
+  <mat-checkbox [disabled]="true" [checked]="post.getChecked()" color="primary">Продуктивность</mat-checkbox>
+
+  <button (click)="deleteTask(post)">Delete</button>
 
 </div>

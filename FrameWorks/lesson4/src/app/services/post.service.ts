@@ -10,15 +10,29 @@ export class PostService {
   constructor() {
     this.posts = [];
   }
-  public add(title: string, value: string, description: string) {
-    this.posts.push(new Post(title, value, description, this.posts.length));
+  public add(
+    title: string,
+    value: string,
+    description: string,
+    checked: boolean
+  ) {
+    this.posts.push(
+      new Post(title, value, description, this.posts.length, checked)
+    );
   }
   public getAll() {
     return [...this.posts];
   }
 
-  public update(post: IPost) {
-    const found = this.posts.find((p) => p.getId() === post.getId());
-    found?.setTitle('found');
+  // public update(post: IPost) {
+  //   const found = this.posts.find((p) => p.getId() === post.getId());
+  //   found?.setTitle('found');
+  // }
+
+  deleteTask(taskToDelete: IPost) {
+    const index = this.posts.indexOf(taskToDelete);
+    if (index !== -1) {
+      this.posts.splice(index, 1);
+    }
   }
 }
