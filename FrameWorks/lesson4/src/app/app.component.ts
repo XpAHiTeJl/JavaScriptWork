@@ -10,7 +10,8 @@ import { IPost } from './interfaces';
 export class AppComponent {
   constructor(private postService: PostService) {}
 
-  onSubmitHandler(data: any) {
+  onSubmitHandler(form: any) {
+    const data = form.value;
     this.postService.add(
       data.title,
       data.formselect,
@@ -18,6 +19,7 @@ export class AppComponent {
       data.checked
     );
     console.log(this.getPosts());
+    form.reset();
   }
   getPosts() {
     return this.postService.getAll();
