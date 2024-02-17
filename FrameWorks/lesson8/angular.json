@@ -23,6 +23,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+>>>>>>> 6cb6f53 (lesson)
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
