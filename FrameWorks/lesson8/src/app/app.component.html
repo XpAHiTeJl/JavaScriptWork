@@ -1,9 +1,11 @@
 <header>
   <nav>
     <a *ngFor="let catrgory of categories" [routerLink]="catrgory.path">
-      <button>{{catrgory.title}}</button></a>
+      <button nbButton status="success" (click)="showSpinner()"> {{catrgory.title}}</button></a>
   </nav>
 </header>
+
+<app-spinner></app-spinner>
 
 
 <main>
