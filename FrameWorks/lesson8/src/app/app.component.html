@@ -1,14 +1,12 @@
-<div class="carusel">
-
-  <c-carousel [interval]="3000">
-    <c-carousel-inner>
-      <c-carousel-item *ngFor="let slide of slides">
-        <img [src]="slide.src" alt="{{slide.title}}" class="d-block w-100" loading="lazy" />
-      </c-carousel-item>
-    </c-carousel-inner>
-    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
-    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
-  </c-carousel>
+<header>
+  <nav>
+    <a *ngFor="let catrgory of categories" [routerLink]="catrgory.path">
+      <button>{{catrgory.title}}</button></a>
+  </nav>
+</header>
 
 
-</div>
+<main>
+  <router-outlet>
+  </router-outlet>
+</main>

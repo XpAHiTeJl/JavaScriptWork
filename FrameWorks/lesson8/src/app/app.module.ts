@@ -8,9 +8,11 @@ import {
   BrowserAnimationsModule,
   NoopAnimationsModule,
 } from '@angular/platform-browser/animations';
+import { MotocikleComponent } from './motocikle/motocikle.component';
+import { CarsComponent } from './cars/cars.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MotocikleComponent, CarsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

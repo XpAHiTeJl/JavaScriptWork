@@ -5,23 +5,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
-  slides: any[] = new Array(3).fill({
-    id: -1,
-    src: '',
-    title: '',
-    subtitle: '',
-  });
+export class AppComponent {
+  public categories = [
+    {
+      title: 'Motocikle',
+      path: 'vehicles/moto/',
+    },
 
-  ngOnInit(): void {
-    this.slides[0] = {
-      src: './assets/img/angular.jpg',
-    };
-    this.slides[1] = {
-      src: './assets/img/react.jpg',
-    };
-    this.slides[2] = {
-      src: './assets/img/vue.jpg',
-    };
-  }
+    {
+      title: 'Cars',
+      path: 'vehicles/cars/',
+    },
+  ];
 }
