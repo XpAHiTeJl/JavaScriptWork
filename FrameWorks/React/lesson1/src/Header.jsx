@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header>
-      <h1>Заголовок</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="">121321</a>
-          </li>
-          <li></li>
-          <li></li>
-        </ul>
-      </nav>
+      <h1>Мой сайт</h1>
+      <button onClick={handleMenuToggle}>Меню</button>
+      {isMenuOpen && (
+        <nav>
+          <a href="#">Главная</a>
+          <a href="#">О нас</a>
+          <a href="#">Контакты</a>
+        </nav>
+      )}
     </header>
   );
 };
+
+export default Header;
