@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 export const Button = ({ cn, text, onClickHandler }) => {
-    return (
-        <button onClick={onClickHandler} className={`btn btn${cn}`}>
-            {text}
-        </button>
-    );
+  return (
+    <button onClick={onClickHandler} className={` btn-${cn}`}>
+      {text}
+    </button>
+  );
 };
